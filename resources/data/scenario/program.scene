@@ -1,0 +1,6 @@
+// this is where all the levels are scheduled
+
+[scene name="level1"]
+[scene name="level2"]
+[scene name="level3"]
+[scene name="level4"]

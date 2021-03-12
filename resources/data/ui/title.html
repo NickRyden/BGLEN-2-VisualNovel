@@ -1,0 +1,213 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+/* Create a brick wall layered over the body. */
+
+:root {
+	--neon: #ff65bd;
+	--glow: #6b1839;
+	--inner-light: #ffe6ff;
+	--inner-dark: #ff65bd;
+	
+	--neon-sub: #ebcc34;
+	--glow-sub: #ebcc3455;
+	--inner-light-sub: #FFF;
+	--inner-dark-sub: #FFF;
+}
+
+#brick-wall {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	
+	font-family: 'Roboto Bold', Arial;
+	
+	background-color: #222233;
+	background-image: linear-gradient(335deg, black 23px, transparent 23px),
+		linear-gradient(155deg, black 23px, transparent 23px),
+		linear-gradient(335deg, black 23px, transparent 23px),
+		linear-gradient(155deg, black 23px, transparent 23px);
+	background-size: 58px 58px;
+	background-position: 0px 2px, 4px 35px, 29px 31px, 34px 6px;
+	user-select: none;
+}
+
+.sign, .subtitle {
+	position: absolute;
+	display: flex;
+	
+	align-items: center;
+	justify-content: center;
+	
+	letter-spacing: 4;
+	text-transform: uppercase;
+}
+
+.sign {
+	/* Center the sign. */
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 50%;
+	z-index: 3;
+	
+	/* Set the width wide enough to display appropriate amount of text. */
+	width: 80vw;
+	height: 50vh;
+	
+	/* Glow properties. */
+	background-image: radial-gradient(ellipse 50% 35% at 50% 50%, var(--glow), transparent);
+	color: var(--neon);
+	text-shadow: 0 0 0.6rem var(--neon), 0 0 1.5rem var(--neon), -0.2rem 0.1rem 1rem var(--neon), 0.2rem 0.1rem 1rem var(--neon), 0 -0.5rem 2rem var(--neon), 0 0.5rem 3rem var(--neon);
+	
+	/* Text properties. */
+	font-family: 'Roboto Bold', Arial;
+	font-size: 18vh;
+	
+	animation: shine 2s forwards, flicker 3s infinite;
+}
+
+.subtitle {	
+	/* Center the sign. */
+	left: 50%;
+	top: 55%;
+	transform: rotate(-12deg);
+	z-index: 2;
+	
+	/* Set the width wide enough to display appropriate amount of text. */
+	width: 50vw;
+	height: 20vh;
+	
+	/* Glow properties. */
+	background-image: radial-gradient(ellipse 50% 35% at 50% 50%, var(--glow-sub), transparent);
+	color: var(--neon-sub);
+	
+	text-shadow: 0 0 0.6rem var(--neon-sub), 0 0 1.5rem var(--neon-sub), -0.2rem 0.1rem 1rem var(--neon-sub), 0.2rem 0.1rem 1rem var(--neon-sub), 0 -0.5rem 2rem var(--neon-sub), 0 0.5rem 3rem var(--neon-sub);
+	
+	/* Text properties. */
+	font-family: 'Dancing Script', cursive;
+	font-size: 5vh;
+	
+	animation: shine-sub 2s forwards, subtitle-flicker 3s infinite;
+}
+
+@keyframes blink {
+	0%, 24%, 36%, 75% {
+		color: var(--inner-light);
+		text-shadow: 0 0 0.6rem var(--inner-light), 0 0 1.5rem var(--inner-dark),
+		-0.2rem 0.1rem 1rem var(--inner-dark), 0.2rem 0.1rem 1rem var(--inner-dark);
+	}
+	28%, 33% {
+		color: var(--inner-dark);
+		text-shadow: none;
+	}
+	82%,97% {
+		color: var(--inner-dark);
+		text-shadow: none;
+	}
+}
+
+@keyframes blink-sub {
+	0%, 24%, 36%, 75% {
+		color: var(--inner-light-sub);
+		text-shadow: 0 0 0.6rem var(--inner-light-sub), 0 0 1.5rem var(--inner-dark-sub),
+		-0.2rem 0.1rem 1rem var(--inner-dark-sub), 0.2rem 0.1rem 1rem var(--inner-dark-sub);
+	}
+	28%, 33% {
+		color: var(--inner-dark-sub);
+		text-shadow: none;
+	}
+	82%,97% {
+		color: var(--inner-dark-sub);
+		text-shadow: none;
+	}
+}
+
+.flicker {
+	animation: shine 2s forwards, blink 3s 2s infinite;
+}
+
+.faster-flicker {
+	animation: shine 2s forwards, blink 10s 1s infinite;
+}
+
+.subtitle-flicker {
+	animation: shine-sub 2s forwards, blink-sub 3s 2s infinite;
+}
+
+.subtitle-fast {
+	animation: shine-sub 2s forwards, blink-sub 10s 1s infinite;
+}
+
+@keyframes shine {
+	0% {
+		color: var(--glow);
+		text-shadow: none;
+	}
+	100% {
+		color: var(--inner-light);
+		text-shadow: 0 0 0.6rem var(--inner-light), 0 0 1.5rem var(--inner-dark),
+		-0.2rem 0.1rem 1rem var(--inner-dark), 0.2rem 0.1rem 1rem var(--inner-dark);
+	}
+}
+
+@keyframes shine-sub {
+	0% {
+		color: var(--glow-sub);
+		text-shadow: none;
+	}
+	100% {
+		color: var(--inner-light-sub);
+		text-shadow: 0 0 0.6rem var(--inner-light-sub), 0 0 1.5rem var(--inner-dark-sub),
+		-0.2rem 0.1rem 1rem var(--inner-dark-sub), 0.2rem 0.1rem 1rem var(--inner-dark-sub);
+	}
+}
+
+@keyframes flicker {
+	from { opacity: 1; }
+	 4% { opacity: 0.9; }
+	 6% { opacity: 0.85; }
+	 8% { opacity: 0.95; }
+	10% { opacity: 0.9; }
+	11% { opacity: 0.922; }
+	12% { opacity: 0.9; }
+	14% { opacity: 0.95; }
+	16% { opacity: 0.98; }
+	17% { opacity: 0.9; }
+	19% { opacity: 0.93; }
+	20% { opacity: 0.99; }
+	24% { opacity: 1; }
+	26% { opacity: 0.94; }
+	28% { opacity: 0.98; }
+	37% { opacity: 0.93; }
+	38% { opacity: 0.5; }
+	39% { opacity: 0.96; }
+	42% { opacity: 1; }
+	44% { opacity: 0.97; }
+	46% { opacity: 0.94; }
+	56% { opacity: 0.9; }
+	58% { opacity: 0.9; }
+	60% { opacity: 0.99; }
+	68% { opacity: 1; }
+	70% {opacity: 0.9; }
+	72% { opacity: 0.95; }
+	93% { opacity: 0.93; }
+	95% { opacity: 0.95; }
+	97% { opacity: 0.93; }
+	 to { opacity: 1;}
+}
+</style>
+
+<div id="brick-wall">
+	<div class="sign">
+		<span class="faster-flicker">B</span>-GL<span class="flicker">E</span>N
+	</div>
+	
+	<div class="subtitle">
+		<span class="subtitle-fast">W</span>hoever that <span class="subtitle-flicker">i</span>s...
+	</div>
+<div>
+
+

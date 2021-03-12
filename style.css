@@ -1,0 +1,88 @@
+@font-face {
+	font-family: 'Roboto Bold';
+	src: url('resources/data/fonts/Roboto-Bold.ttf');
+}
+
+body {
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+	background: #000000;
+	color: #ffffff;
+	cursor: pointer;
+	user-select: none;
+}
+
+.scaleable-wrapper {
+	padding: 20px;
+	resize: both;
+	position: relative;
+	background: #666;
+	height: 400px;
+}
+
+.design-wrapper {
+	text-align: center;
+	background: white;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	transform-origin: center center;
+}
+
+.ui-resizable-se {
+  width: 10px;
+  height: 10px;
+  background: orange;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.msg_layer {
+	position: absolute;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	margin: auto;
+	
+	border-radius: 20px;
+}
+
+.msg_name_plate {
+	position: relative;
+	display: table;
+	border-radius: 15px 15px 0px 0px;
+	margin-left: 50px;
+	text-align: center;
+	background: #FFF;
+	font-size: 2.4rem;
+	font-style: normal;
+	font-family: 'Roboto Bold', sans-serif;
+	-webkit-text-stroke: 1px #23430C;
+	text-shadow: -1px 1px 2px #23430C, 1px 1px 2px #23430C, 1px -1px 0 #23430C, -1px -1px 0 #23430C;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

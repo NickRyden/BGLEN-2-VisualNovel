@@ -1,0 +1,19 @@
+{
+    "name": "B-GLEN",
+    "version": "0.1.0",
+    "author": "Group: B-GLEN",
+    "description": "Visual Novel Engine",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "devDependencies": {
+        "electron": "^12.0.0",
+        "electron-packager": "^15.2.0"
+    },
+    "dependencies": {
+        "bootstrap": "^4.6.0",
+        "electron-debug": "^3.2.0",
+        "popper.js": "^1.16.1"
+    }
+}

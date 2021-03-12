@@ -1,0 +1,3 @@
+[title source="title.html" transition="1.2s" transition-type="fade-in-out"]
+
+[menu source="menu.html" location="bottom-right"]

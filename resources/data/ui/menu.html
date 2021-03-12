@@ -1,0 +1,123 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+:root {
+	--highlight: #fc0;
+}
+
+body {
+	margin: 0px; 
+	padding: 0px; 
+	font-family: 'Roboto bold', Arial;
+	user-select: none;
+	cursor: pointer;
+}
+
+#menu-bg {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background: #000;
+	background: url('../B-GLEN/resources/data/ui/menu-bg2.jpg');
+	background-size: cover;
+	z-index: 0;
+}
+
+#button-layout {
+	position: absolute;
+	bottom: 60px;
+	height: 50%;
+	width: 20%;
+	background: transparent;
+	z-index: 5;
+	transition: 6s;
+	left: 0;
+}
+
+
+
+
+#app-title {
+	position: absolute;
+	height: 20%;
+	width: 50%;
+	background: transparent;
+	z-index: 6;
+}
+
+.opt-btn {
+	display: block;
+	border-radius: 25px;
+	min-width: 200px;
+	padding: 10px;
+	margin: 10px;
+	height: 8vh;
+	width: 30vw;
+	background: #aaa;
+	background: linear-gradient(to right, #777 0%, #aaa 30%, transparent 100%);
+	text-shadow: 0px 0px 10px #000;
+	opacity: 0.8;
+	color: #EEE;
+	line-height: 5.6vh;
+	font-size: 3.2vh;
+}
+
+.opt-btn:hover {
+	background: linear-gradient(to right, #669 0%, #969 30%, transparent 100%);
+	text-shadow: 0px 0px 10px var(--highlight);
+	color: #FFF;
+}
+
+#app-char {
+	z-index: 1;
+}
+
+#post-process {
+	z-index: 2;
+	height: 100%;
+	width: 100%;
+	background: rgb(131,58,180);background: linear-gradient(310deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+	opacity: 0.1;
+}
+
+.char-menu {
+	position: absolute;
+	bottom: -15vh;
+	height: 90vh;
+	width: 55vw;
+}
+
+.charKohaku { right: -5%; transform: scaleX(-1);}
+.charMisaki { right: 15%; }
+
+#app-title {
+	position: absolute;
+	top: 20px;
+	left: 30px;
+	font-size: 8vh;
+}
+</style>
+
+<div id="menu-bg">
+	<div id="app-title">App Title</div>
+	
+	<div id="button-layout">
+		<span class="opt-btn" onclick="">New Game</span>
+		<span class="opt-btn" onclick="">Continue</span>
+		<span class="opt-btn" onclick="">Preferencess</span>
+		<span class="opt-btn" onclick="">Credits</span>
+		<span class="opt-btn" onclick="window.close();">Quit</span>
+		<span class="opt-btn" onclick="">Rage Quit</span>
+	</div>
+	
+	<div id="app-char">
+		<img src="resources/data/images/character/misaki_norm.png" class="charMisaki char-menu" id="char2" />
+		<img src="resources/data/images/character/kohaku_smug.png" class="charKohaku char-menu" id="char1" />
+	</div>
+	
+	<div id="post-process"></div>
+</div>
+
+
