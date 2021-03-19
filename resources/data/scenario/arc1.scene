@@ -1,0 +1,36 @@
+[scene name="arc1" source="arc.html"]
+[bg img="bgMtn01.png"]
+
+// Possible use of UI buttons if not set globally
+[ui_btn name="" action=""]
+
+// Place a character in the scene, optional effect, e.g. from left, from right teleport in etc.
+[char name="" img="UnityChan.png" effect="" left="170" bottom="0" layer="1" flip="0"]
+
+// Example of what appears on which  layer. Set to false at the end of every instance if necessary
+[msg layer="message0" visible="true"]
+
+// Example of a dialogue line (to be coded)
+Hi, I'm unity[p]
+
+// Example of scene effects (to be coded)
+[effect type="earthquake"]
+[effect type="burning"]
+
+// Yes, No or alternative options for user input
+[option type="yes-no" text="Are you ok?" ref="are-you-ok1"]
+
+// Multiple options
+[option type="multi" options="Ok | Not Sure | Why not?" text="Are you ok?" ref="are-you-ok1"]
+
+// a response from a yes or no option
+[result ref="are-you-ok1" txtyes="Great to hear" txtno="Oh no, do you need a doctor?"]
+
+// Multiple options answered in the response tag delimited by '|'
+[result ref="are-you-ok1" response="Ok? | What do you mean? | Why?"]
+
+
+
+
+
+

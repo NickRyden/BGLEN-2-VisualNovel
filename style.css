@@ -13,6 +13,15 @@ body {
 	user-select: none;
 }
 
+#wall {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	background: #000;
+}
+
 .scaleable-wrapper {
 	padding: 20px;
 	resize: both;
@@ -40,30 +49,8 @@ body {
   right: 0;
 }
 
-.msg_layer {
-	position: absolute;
-	left: 50%;
-	margin-right: -50%;
-	transform: translate(-50%, -50%);
-	margin: auto;
-	
-	border-radius: 20px;
-}
 
-.msg_name_plate {
-	position: relative;
-	display: table;
-	border-radius: 15px 15px 0px 0px;
-	margin-left: 50px;
-	text-align: center;
-	background: #FFF;
-	font-size: 2.4rem;
-	font-style: normal;
-	font-family: 'Roboto Bold', sans-serif;
-	-webkit-text-stroke: 1px #23430C;
-	text-shadow: -1px 1px 2px #23430C, 1px 1px 2px #23430C, 1px -1px 0 #23430C, -1px -1px 0 #23430C;
-	
-}
+
 
 
 

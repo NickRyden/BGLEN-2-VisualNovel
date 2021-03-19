@@ -1,3 +1,11 @@
 [title source="title.html" transition="1.2s" transition-type="fade-in-out"]
 
-[menu source="menu.html" location="bottom-right"]
+// transition time and transition type yet to be coded for
+
+
+[menu source="menu.html" button-locn="bottom-left, 20px, 20px"]
+[menu-title locn="top-left, 20px, 20px"]
+[menu-char source="" locn="bottom-right, 0, 0"]
+[menu-char source="" locn="bottom-right, 0, 0"]
+
+// Current only the first menu-instance has been coded for
