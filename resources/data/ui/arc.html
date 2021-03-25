@@ -76,7 +76,15 @@
 <div class="arc-layer layer-msg" id="message1"><div class="msg-nameplate"></div></div>
 <div class="arc-layer layer-msg" id="message2"><div class="msg-nameplate"></div></div>
 
+<script>
+// Load all document resources on click
+$(document).ready(NextPane('arc1', CurrentLine));
 
+// Add manual mode functionality
+$(document).on('click', function() {
+    NextPane('arc1', CurrentLine);
+});
+</script>
 
 
 

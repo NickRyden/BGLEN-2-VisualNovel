@@ -2,10 +2,15 @@
 var maindir   = '../B-GLEN/resources/';
 var LocnScene = '../B-GLEN/resources/data/scenario/';
 var LocnImg   = '../B-GLEN/resources/data/images/';
+var LocnImgBg   = '../B-GLEN/resources/data/images/bg/';
+var LocnImgChar   = '../B-GLEN/resources/data/images/character/';
+
 var LocnFonts = '../B-GLEN/resources/data/fonts/';
 var LocnSound = '../B-GLEN/resources/data/sound/';
 var LocnUI    = '../B-GLEN/resources/data/ui/';
 var LocnVideo = '../B-GLEN/resources/data/video/';
+
+var CurrentLine = 0;
 
 // Parse JSON for css formatting
 $.getJSON(maindir + "config.json", function( data ) {
@@ -69,30 +74,6 @@ function ProcessScene(Scene) {
 							break;
 						case 'placeholder1':
 							break;
-						case 'placeholder1':
-							break;
-						case 'placeholder1':
-							break;
-						case 'placeholder1':
-							break;
-						case 'placeholder1':
-							break;
-						case 'placeholder1':
-							break;
-						case 'placeholder1':
-							break;
-						case 'placeholder1':
-							break;
-						case 'placeholder1':
-							break;
-						case 'placeholder1':
-							break;
-						case 'placeholder1':
-							break;
-						case 'placeholder1':
-							break;
-						case 'placeholder1':
-							break;
 					}
 				}
 			}
@@ -100,48 +81,91 @@ function ProcessScene(Scene) {
 	});
 }
 
+function NextPane(Scene, CurrentLine) {
+	// When a user clicks it will initiate the Interpret scene function
+	ManageLines(Scene, CurrentLine);
+}
 
+function ManageLines(Scene, LineNum) {
+	// Get the scene from file
+	arcScene = Scene + '.scene';
 
+	// Action the scene line by line
+	jQuery.get(LocnScene + Scene + ".scene", function (data) {
+		// Remove lines
+		data = data.replace(/^(?=\n)$|^\s*|\s*$|\n\n+/gm,"");
 
+		// Split up data into lines
+		var lines = data.split("\n");
 
+		if (typeof lines[LineNum] == 'undefined') {
+			// HERE WE HAVE TO ENABLE ARC SWITCHING AND END OF GAME - E.G. ROLL CREDITS
+		} else {
+			if (lines[LineNum].charAt(0) == '[' ) {
+				console.log('Auto Mode: ' + lines[LineNum]);
 
+				CurrentLine = LineNum + 1;
+
+				NextPane(Scene, CurrentLine);
+
+				// NEXT WE HAVE TO SEND THIS OFF TO BE INTERPRETED
+				ManageScene(lines[LineNum]);
+			} else {
+				console.log('Manual Mode: ' + lines[LineNum]);
+
+				CurrentLine = LineNum + 1;
+
+				// WE DON'T ADD NextPane() FUNCTION HERE BECAUSE WE WANT TO WAIT FOR A USER'S INPUT
+			}
+		}
+	});
+}
+
+// Start a new game
 function newGame() {
 	ProcessScene('arc1');
 }
 
-
+// Continue game function - TO BE IMPLEMENTED
 function contGame() {}
 
-
+// Preferences UI - TO BE IMPLEMENTED
 function openPrefs() {}
 
-
+// Run credits - TO BE IMPLEMENTED
 function openCredits() {}
 
-
+// QUIT, JUST... BETTER
 function doRageQuit() {}
 
-
-
-
-
-
-// if first char is { then...
-	//break words into arrays
-	// get things either side of an euqls sign and strip quotes
-//else
-	//is spoken text,
-	// detect [ in string
-	// on error where [ does not exists throw exception
-	// set up yes no options
-	// fork options etc
-// end if
-
-
-
+// Process the title and menu screens
 ProcessScene('title');
 
+function ManageScene(Res) {
+	if (Res.charAt(0) == '[') {
+		// Clean the string of [, ] and split it up into meaningful values
+		CleanStr = Res.replace('[', '');
+		CleanStr = CleanStr.replace(']', '');
+		Words = CleanStr.split(' ');
 
+		// Split the word to get the topic and the value
+		for (i = 1; i < Words.length; i++) {
+			item = Words[i].split('=');
+			// Switch the first word in brackets - BG, SCENE, CHAR, EFFECT ETC
+			switch (Words[0]) {
+				case 'bg':
+					console.log(item[0]);
+					console.log(item[1]);
+
+					if (item[0] == 'img') {
+						$('#layer5').css('background-image', 'url(' + LocnImgBg + item[1].replaceAll('"', '') + ')');
+						$('#layer5').css('background-size', 'cover');
+					}
+					break;
+			}	
+		}
+	}
+}
 
 
 
