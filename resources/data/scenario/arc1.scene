@@ -1,21 +1,31 @@
 [scene name="arc1" source="arc.html"]
 [bg img="bgMtn01.png"]
 
+[obj layer="layer5" source="clock.html"]
+
 [ui_btn name="" action=""]
 
-[char name="" img="UnityChan.png" effect="" left="170" bottom="0" layer="1" flip="0"]
+[char layer="1" source="UnityChan.png" effect="" left="50" bottom="0" flip="0"]
 
-[msg layer="message0" visible="true"]
-
-Hi, I'm unity[p]
+[msg char="Haruka"]
+Hi, I'm Haruka-chan
 
 [effect type="earthquake"]
 [effect type="burning"]
 
-[option type="yes-no" text="Are you ok?" ref="are-you-ok1"]
+[option type="yes-no"]
+Are you ok?
 
-[option type="multi" options="Ok | Not Sure | Why not?" text="Are you ok?" ref="are-you-ok1"]
+$arrResp = ['Yes, I am fine','No, I need a Doctor'];
+[response opt="yes|$arrResp[0] opt="no|$arrResp[1]"]
+
+[option type="multi" options="Ok|Not Sure|Why not?" ref="are-you-ok1"]
 
 [result ref="are-you-ok1" txtyes="Great to hear" txtno="Oh no, do you need a doctor?"]
 
 [result ref="are-you-ok1" response="Ok? | What do you mean? | Why?"]
+
+[char layer="2" source="kohaku_smug.png" effect="" left="50" bottom="0" flip="0"]
+
+[msg char="Unity"]
+Hi, I'm Unity-chan

@@ -72,14 +72,15 @@ function ProcessScene(Scene) {
 								$('#wall').load(LocnUI + item[1].replaceAll('"', ''));
 							}
 							break;
-						case 'placeholder1':
-							break;
 					}
 				}
 			}
 		});
 	});
 }
+
+var speed = 50;
+var n = 0;
 
 function NextPane(Scene, CurrentLine) {
 	// When a user clicks it will initiate the Interpret scene function
@@ -113,6 +114,8 @@ function ManageLines(Scene, LineNum) {
 			} else {
 				console.log('Manual Mode: ' + lines[LineNum]);
 
+				$('#msgbox-wrapper').text(lines[LineNum]);
+				
 				CurrentLine = LineNum + 1;
 
 				// WE DON'T ADD NextPane() FUNCTION HERE BECAUSE WE WANT TO WAIT FOR A USER'S INPUT
@@ -139,7 +142,7 @@ function openCredits() {}
 function doRageQuit() {}
 
 // Process the title and menu screens
-ProcessScene('title');
+ProcessScene('title'); 
 
 function ManageScene(Res) {
 	if (Res.charAt(0) == '[') {
@@ -151,15 +154,42 @@ function ManageScene(Res) {
 		// Split the word to get the topic and the value
 		for (i = 1; i < Words.length; i++) {
 			item = Words[i].split('=');
+			val = item[1].replaceAll('"', '');
 			// Switch the first word in brackets - BG, SCENE, CHAR, EFFECT ETC
 			switch (Words[0]) {
 				case 'bg':
+					if (item[0] == 'img') {
+						$('#base').css('background-image', 'url(' + LocnImgBg + item[1].replaceAll('"', '') + ')');
+						$('#base').css('background-size', 'cover');
+					}
+					break;
+				case 'obj':
 					console.log(item[0]);
 					console.log(item[1]);
+	
+					if (item[0] == 'layer') {
+						$('#' + item[1].replaceAll('"', '')).append('<div height="100%" width="100%" id="clock-place"></div>');
+					} else if (item[0] == 'source') {
+						$('#clock-place').load(item[1].replaceAll('"', ''));
+					}
 
-					if (item[0] == 'img') {
-						$('#layer5').css('background-image', 'url(' + LocnImgBg + item[1].replaceAll('"', '') + ')');
-						$('#layer5').css('background-size', 'cover');
+					break;
+				case 'msg':
+					if (item[0] == 'char') {
+						$('.msg-nameplate').text(item[1].replaceAll('"', ''));
+					}
+					break;
+				case 'char':
+					if (item[0] == 'layer') {
+						$('#layer' + val).append('<div class="char-item" id="char' + val + '">');
+						currLayer = val;
+					} else if (item[0] == 'source') {
+						$('#char' + currLayer).css('background-image', 'url(' + LocnImgChar + item[1].replaceAll('"', '') + ')');
+						$('#char' + currLayer).css('background-size', 'cover');
+					} else if (item[0] == 'left') {
+						$('#char' + currLayer).css('left', val + 'vw');
+					} else if (item[0] == 'bottom') {
+						$('#char' + currLayer).css('bottom', val + 'vh');
 					}
 					break;
 			}	

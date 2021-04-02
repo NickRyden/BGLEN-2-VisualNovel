@@ -41,12 +41,12 @@ body {
 }
 
 .ui-resizable-se {
-  width: 10px;
-  height: 10px;
-  background: orange;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+	width: 10px;
+	height: 10px;
+	background: orange;
+	position: absolute;
+	bottom: 0;
+	right: 0;
 }
 
 
