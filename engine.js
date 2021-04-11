@@ -12,6 +12,27 @@ var LocnVideo = '../B-GLEN/resources/data/video/';
 
 var CurrentLine = 0;
 
+var GetNow = new Date().getHours();
+
+function bgTime(sceneImg) {
+	if (GetNow >= 6 && GetNow < 9) {
+		$('#base').css('background-image', 'url(' + LocnImgBg + sceneImg + '-riseset.jpg)');
+		$('#base').css('background-size', 'cover');
+	} else if (GetNow >= 9 && GetNow < 16) {
+		$('#base').css('background-image', 'url(' + LocnImgBg + item[1].replaceAll('"', '') + '-day.jpg)');
+		$('#base').css('background-size', 'cover');
+	} else if (GetNow >= 16 && GetNow < 19) {
+		$('#base').css('background-image', 'url(' + LocnImgBg + item[1].replaceAll('"', '') + '-riseset.jpg)');
+		$('#base').css('background-size', 'cover');
+	} else if (GetNow >= 19 && GetNow < 6) {
+		$('#base').css('background-image', 'url(' + LocnImgBg + item[1].replaceAll('"', '') + '-night.jpg)');
+		$('#base').css('background-size', 'cover');
+	} else {
+		$('#base').css('background-image', 'url(' + LocnImgBg + item[1].replaceAll('"', '') + '-day)');
+		$('#base').css('background-size', 'cover');
+	}
+}
+
 // Parse JSON for css formatting
 $.getJSON(maindir + "config.json", function( data ) {
 	var title = data.title;
@@ -159,20 +180,16 @@ function ManageScene(Res) {
 			switch (Words[0]) {
 				case 'bg':
 					if (item[0] == 'img') {
-						$('#base').css('background-image', 'url(' + LocnImgBg + item[1].replaceAll('"', '') + ')');
-						$('#base').css('background-size', 'cover');
+						bgTime(item[1].replaceAll('"', ''));
 					}
 					break;
 				case 'obj':
 					console.log(item[0]);
 					console.log(item[1]);
-	
-					if (item[0] == 'layer') {
-						$('#' + item[1].replaceAll('"', '')).append('<div height="100%" width="100%" id="clock-place"></div>');
-					} else if (item[0] == 'source') {
-						$('#clock-place').load(item[1].replaceAll('"', ''));
-					}
+					$('#base').append('<div id="span-time"></div>');
 
+					$('#span-time').load('clock.html');
+					
 					break;
 				case 'msg':
 					if (item[0] == 'char') {
@@ -196,21 +213,3 @@ function ManageScene(Res) {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

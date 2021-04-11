@@ -1,5 +1,5 @@
 [scene name="arc1" source="arc.html"]
-[bg img="bgMtn01.png"]
+[bg img="house"]
 
 [obj layer="layer5" source="clock.html"]
 

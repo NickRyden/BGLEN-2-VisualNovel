@@ -84,7 +84,16 @@
 	height: 90vh;
 	width: 55vw;
 }
+
+#span-time {
+	height: 100px;
+	width: 300px;
+	font-weight: bold;
+	font-size: calc(14px + 0.3vh);
+}
 </style>
+
+<body onload="startTime()">
 
 <div class="arc-layer layer-norm" id="base"></div>
 <div class="arc-layer layer-norm" id="layer1"></div>
@@ -97,6 +106,8 @@
 	<div class="msg-nameplate"></div>
 	<div class="msgbox-wrapper" id="msgbox-wrapper"></div>
 </div>
+</body>
+
 
 <script>
 // Load all document resources on click
@@ -106,6 +117,22 @@ $(document).ready(NextPane('arc1', CurrentLine));
 $(document).on('click', function() {
     NextPane('arc1', CurrentLine);
 });
+
+function startTime() {
+	var today = new Date();
+	var h = today.getHours();
+	var m = today.getMinutes();
+	var s = today.getSeconds();
+	m = checkTime(m);
+	s = checkTime(s);
+	document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+	var t = setTimeout(startTime, 500);
+}
+
+function checkTime(i) {
+	if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+	return i;
+}
 </script>
 
 
