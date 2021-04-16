@@ -1,0 +1,9 @@
+[scene source="arc.html" arc="4"] 
+[bg img="house"]
+
+[sound param="Gymnopédie.mp3|no"]
+
+[char layer="1" source="UnityChan.png" effect="" left="50" bottom="0" flip="0"]
+
+[msg char="Narrator"]
+All the girls awoke to lights and sirens outside their window. Everyone jumped out of bed to reveal the tragedy on the street below. Haruka had taken her own life overnight by jumping off the apartment balcony

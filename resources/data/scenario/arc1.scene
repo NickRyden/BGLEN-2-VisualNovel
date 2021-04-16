@@ -1,11 +1,11 @@
-[scene name="arc1" source="arc.html"]
+[scene source="arc.html" arc="1"]
 [bg img="house"]
 
 [obj layer="layer5" source="clock.html"]
 
 [ui_btn name="" action=""]
 
-[char layer="1" source="UnityChan.png" effect="" left="50" bottom="0" flip="0"]
+[char layer="1" source="UnityChan.png" effect="" left="50" flip="0"]
 
 [msg char="Haruka"]
 Hi, I'm Haruka-chan
@@ -25,7 +25,7 @@ $arrResp = ['Yes, I am fine','No, I need a Doctor'];
 
 [result ref="are-you-ok1" response="Ok? | What do you mean? | Why?"]
 
-[char layer="2" source="kohaku_smug.png" effect="" left="50" bottom="0" flip="0"]
+[char layer="2" source="kohaku_smug.png" effect="" left="50" flip="0"]
 
 [msg char="Unity"]
 Hi, I'm Unity-chan

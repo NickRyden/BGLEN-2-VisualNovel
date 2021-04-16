@@ -1,36 +1,85 @@
-[scene name="testscene"]
-[bg img="bgMtn01.png"]
+[scene source="arc.html" arc="4"] 
+[bg img="house"]
 
-// Possible use of UI buttons if not set globally
-[ui_btn name="" action=""]
+[checkpoint]
 
-// Place a character in the scene, optional effect, e.g. from left, from right teleport in etc.
-[char name="" img="UnityChan.png" effect="" left="170" bottom="0" layer="1" flip="0"]
+[sound param="Kaiseki.mp3|loop"]
 
-// Example of what appears on which  layer. Set to false at the end of every instance if necessary
-[msg layer="message0" visible="true"]
+[obj layer="layer5" source="clock.html"]
 
-// Example of a dialogue line (to be coded)
-Hi, I'm unity[p]
+[char layer="1" source="UnityChan.png" effect="" left="50" bottom="0" flip="0"]
 
-// Example of scene effects (to be coded)
-[effect type="earthquake"]
-[effect type="burning"]
+[msg char="Haruka"]
+This story started when I was at home with my parents, Akio and Chiyo, a couple of years ago.
 
-// Yes, No or alternative options for user input
-[option type="yes-no" text="Are you ok?" ref="are-you-ok1"]
+My mum was reading a book before making lunch for everyone.
 
-// Multiple options
-[option type="multi" options="Ok | Not Sure | Why not?" text="Are you ok?" ref="are-you-ok1"]
+My father was gardening around the back before he started his project work in the basement.
 
-// a response from a yes or no option
-[result ref="are-you-ok1" txtyes="Great to hear" txtno="Oh no, do you need a doctor?"]
+I had to study, a big assignment was coming up, and it needed to go well. My assignment results were atrocious.
 
-// Multiple options answered in the response tag delimited by '|'
-[result ref="are-you-ok1" response="Ok? | What do you mean? | Why?"]
+I kept the door open in case my parents needed help with anything or lunch was ready.
 
+My mum came past my door. She knocked and whispered
 
+[msg char="Chiyo"]
+"Honey, what would you like for lunch?"
 
+[msg char="Haruka"]
+I didn't think of anything about the whispering. I felt that my mum didn't want to disturb me while I was studying.
 
+I told her I'd like a smoked salmon sandwich.
 
+A lot of banging was coming from downstairs, like hammering and things falling over. 
 
+I yelled downstairs and asked my dad if he could keep the noise down so I could study. He stopped his projects, and I heard the back door open and close.
+
+[msg char="Akio"]
+Sorry Haruka, I'll do some gardening instead.
+
+[msg char="Haruka"]
+A while later, my mum came around again and again whispered.
+
+[msg char="Chiyo"]
+"Lunch is ready".
+
+[msg char="Haruka"]
+I replied, "Thanks, mum, I'll be down soon".
+
+This time the room felt a whole lot colder than usual, especially for summer.
+
+I walked downstairs, nobody was around, but there was a plate with my smoked salmon sandwich on it.
+
+Mum must have been upstairs having a rest.
+
+I saw my dad flick past the window outside, seeing he was busy gardening.
+
+A knock at the door, I thought I'd ignore it and let my parents answer it. The knocks continued, almost relentlessly. I decided to go down and open the door myself.
+
+Upon opening the door, two hulking police officers were standing there. 
+
+I thought that a crime had been committed nearby, and they were here to ask questions.
+
+One officer asked for my name and my ID. I promptly gave them my ID card. Things were getting a little concerning now. 
+
+Was one of my friends in trouble? Or was I mistaken for a wanted criminal?
+
+The officer continued by saying...
+
+[msg char="Officer1"]
+"Ths morning at 9:15 am, your parents were involved in a car accident. They were pronounced dead on arrival at the local hospital."
+
+[msg char="Haruka"]
+I stood there in silence, disbelief.
+
+As the nightmare unfolded, I told the officer I didn't believe them. My parents had been home all morning, my dad, he's been working in the basement, and he's in the garden right now, and my mum just made lunch.
+
+"Right?" I tried to reassure myself.
+
+I invited the officers inside, turning to see two fleeting shadows disappear through separate doors at the end of the hall.
+
+The police sat me down and consoled me at the death of my parents. 
+
+I have been struggling with the fact, especially in the past months. It's almost graduation, and everyone and their parents have been so happy together. No one will be at my graduation. My old grandfather, who I'm living with, is too frail to make it to the graduation ceremony.
+
+[option result="arc4ending_good|arc4ending_bad" options="Stay/up/with/Haruka/and/chat/all/night|Go/to/sleep/because/you're/tired."]

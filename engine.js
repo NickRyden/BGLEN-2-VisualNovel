@@ -11,26 +11,41 @@ var LocnUI    = '../B-GLEN/resources/data/ui/';
 var LocnVideo = '../B-GLEN/resources/data/video/';
 
 var CurrentLine = 0;
+var CurrArc = '';
+
+// set markers to enable a feature
+var marker = 0;
+var charselect = 0;
+var Arc = '';
+var ArcComplete = '';
 
 var GetNow = new Date().getHours();
+GetNow = GetNow.toString();
 
 function bgTime(sceneImg) {
-	if (GetNow >= 6 && GetNow < 9) {
+	if (GetNow >= '6' && GetNow <= '9') {
 		$('#base').css('background-image', 'url(' + LocnImgBg + sceneImg + '-riseset.jpg)');
 		$('#base').css('background-size', 'cover');
-	} else if (GetNow >= 9 && GetNow < 16) {
+		PostFX = '#f0b200 0%, #a31d7c 100%';
+	} else if (GetNow >= '9' && GetNow <= '16') {
 		$('#base').css('background-image', 'url(' + LocnImgBg + item[1].replaceAll('"', '') + '-day.jpg)');
 		$('#base').css('background-size', 'cover');
-	} else if (GetNow >= 16 && GetNow < 19) {
+		PostFX = '#555555 0%, #555555 100%';
+	} else if (GetNow >= '16' && GetNow <= '19') {
 		$('#base').css('background-image', 'url(' + LocnImgBg + item[1].replaceAll('"', '') + '-riseset.jpg)');
 		$('#base').css('background-size', 'cover');
-	} else if (GetNow >= 19 && GetNow < 6) {
+		PostFX = '#f0b200 0%, #a31d7c 100%';
+	} else if (GetNow > '19' && GetNow < '6') {
 		$('#base').css('background-image', 'url(' + LocnImgBg + item[1].replaceAll('"', '') + '-night.jpg)');
 		$('#base').css('background-size', 'cover');
+		PostFX = '#001c4b 0%, #092657 100%';
 	} else {
-		$('#base').css('background-image', 'url(' + LocnImgBg + item[1].replaceAll('"', '') + '-day)');
+		$('#base').css('background-image', 'url(' + LocnImgBg + item[1].replaceAll('"', '') + '-day.jpg)');
 		$('#base').css('background-size', 'cover');
 	}
+
+	$('#PostFX').css('background', 'linear-gradient(320deg, ' + PostFX + ')');
+	$('#PostFX').css('opacity', '0.3');
 }
 
 // Parse JSON for css formatting
@@ -38,11 +53,15 @@ $.getJSON(maindir + "config.json", function( data ) {
 	var title = data.title;
 });
 
+Arc= 'arcselect';
+
 // set the height of the parent wrapper
 $("#design-wrapper").height = screen.height;
 $("#design-wrapper").width = screen.width;
 
 function ProcessScene(Scene) {
+	Arc = '';
+
 	// Parse in the scene file - name is static.
 	jQuery.get(LocnScene + Scene + ".scene", function (data) {
 		var lines = data.split("\n");
@@ -73,7 +92,7 @@ function ProcessScene(Scene) {
 							}
 							break;
 						case 'menu':
-							// Lods the menu 5s after the title screen has loaded
+							// Loads the menu 5s after the title screen has loaded
 							if (item[0] == 'source') {
 								$('#wall').append('<div id="menu">' + Words[1] + '</div>');
 								$("#menu").hide();
@@ -92,6 +111,23 @@ function ProcessScene(Scene) {
 								$("#title").hide();
 								$('#wall').load(LocnUI + item[1].replaceAll('"', ''));
 							}
+
+							CurrentLine = 1;
+
+							if (Arc = '') {
+								$(document).ready(NextPane(Arc, CurrentLine));
+
+								$(document).on('click', function() {
+									NextPane(Arc, CurrentLine);
+								});
+							} else {
+								$('#msgbox-wrapper').text('Press any button to continue');
+								console.log('Press any button to continue');
+
+								$(document).on('click', function() {
+									NextPane(Arc, CurrentLine);
+								});
+							}
 							break;
 					}
 				}
@@ -103,12 +139,19 @@ function ProcessScene(Scene) {
 var speed = 50;
 var n = 0;
 
+function LoadArc(Scene) {
+	CurrArc = Scene;
+	$('#wall').load(LocnScene + Scene + '.scene');
+	ProcessScene(Scene);
+}
+
 function NextPane(Scene, CurrentLine) {
 	// When a user clicks it will initiate the Interpret scene function
 	ManageLines(Scene, CurrentLine);
 }
 
 function ManageLines(Scene, LineNum) {
+	Arc = Scene;
 	// Get the scene from file
 	arcScene = Scene + '.scene';
 
@@ -122,6 +165,7 @@ function ManageLines(Scene, LineNum) {
 
 		if (typeof lines[LineNum] == 'undefined') {
 			// HERE WE HAVE TO ENABLE ARC SWITCHING AND END OF GAME - E.G. ROLL CREDITS
+			Scene = '';
 		} else {
 			if (lines[LineNum].charAt(0) == '[' ) {
 				console.log('Auto Mode: ' + lines[LineNum]);
@@ -147,25 +191,39 @@ function ManageLines(Scene, LineNum) {
 
 // Start a new game
 function newGame() {
-	ProcessScene('arc1');
+	ProcessScene('arcselect');
 }
 
 // Continue game function - TO BE IMPLEMENTED
 function contGame() {}
 
 // Preferences UI - TO BE IMPLEMENTED
-function openPrefs() {}
+function openPrefs() {
+	$("#menu").hide();
+	$("#title").hide();
+	$('#wall').load(LocnUI + 'prefs.html');
+}
 
-// Run credits - TO BE IMPLEMENTED
-function openCredits() {}
+function openCredits() {
+	$("#menu").hide();
+	$("#title").hide();
+	$('#wall').load(LocnUI + 'credits.html');
+}
+
+function back2Menu() {
+	$("#menu").show();
+	$('#wall').load('');
+}
 
 // QUIT, JUST... BETTER
 function doRageQuit() {}
 
 // Process the title and menu screens
-ProcessScene('title'); 
+ProcessScene('title');
 
 function ManageScene(Res) {
+	marker = 0;
+
 	if (Res.charAt(0) == '[') {
 		// Clean the string of [, ] and split it up into meaningful values
 		CleanStr = Res.replace('[', '');
@@ -198,18 +256,106 @@ function ManageScene(Res) {
 					break;
 				case 'char':
 					if (item[0] == 'layer') {
-						$('#layer' + val).append('<div class="char-item" id="char' + val + '">');
+						console.log('charselect = ' + charselect);
+						console.log('marker  = ' + marker);
+
+						if (charselect = 1) {
+							if (marker = 1) {
+								$('#char' + val).append('<div class="char-wrapper" onclick="LoadArc(\'arc' + val + '\'); Arc = \'' + val + '\';">');
+							} else {
+								//$('#layer' + val).append('<div class="char-itemArc" id="char' + val + '"></div>');
+							}
+
+							//$('#layer' + val).append('<div class="char-itemArc" id="char' + val + '"></div>');
+						} else {
+							$('#layer' + val).append('<div class="char-itemArc" id="char' + val + '"></div>');
+						}
+						
 						currLayer = val;
+						//ArcScene = 4;
 					} else if (item[0] == 'source') {
 						$('#char' + currLayer).css('background-image', 'url(' + LocnImgChar + item[1].replaceAll('"', '') + ')');
 						$('#char' + currLayer).css('background-size', 'cover');
 					} else if (item[0] == 'left') {
 						$('#char' + currLayer).css('left', val + 'vw');
-					} else if (item[0] == 'bottom') {
-						$('#char' + currLayer).css('bottom', val + 'vh');
 					}
+					break;
+				case 'option':
+					if (item[0] == 'result') {
+						$('.msgbox-wrapper').text('Choose an option:');
+
+						arcOptRes = val.split('|');
+
+						$('.msgbox-wrapper').append('<div class="btn-opt-res" id="optA" onclick="LoadArc(\'' + arcOptRes[0] + '\');"></div>');
+						$('.msgbox-wrapper').append('<div class="btn-opt-res" id="optB" onclick="LoadArc(\'' + arcOptRes[1] + '\');"></div>');
+					} else if (item[0] == 'options') {
+						arcOpt = val.split('|');
+
+						$('#optA').text(arcOpt[0].replaceAll('/', ' '));
+						$('#optB').text(arcOpt[1].replaceAll('/', ' '));
+					}
+					break;
+				case 'sound':
+					if (item[0] == 'param') {
+						optAudio = val.split('|');
+
+						optAudio[1] == 'loop' ? loop = 'loop' : loop = '';
+
+						$('#wall').append('<audio autoplay ' + loop + '><source src="' + LocnSound + optAudio[0] + '" type="audio/mpeg"></audio>');
+						$('audio').prop("volume", 0.1);
+						$('audio').volume = 0.1;
+					} else if (item[0] == 'options') {
+						arcOpt = val.split('|');
+						$('#optA').text(arcOpt[0].replaceAll('/', ' '));
+						$('#optB').text(arcOpt[1].replaceAll('/', ' '));
+					}
+					break;
+				case 'ENDSCENE':
+					charselect = 0;
+					$("#wall").empty();
+					break;
+				case 'checkpoint':
+					var file_name = 'bglen_' + Arc + '_' + GetNow  + '.txt';
+
+					if (item[0] == 'ArcComplete') {
+						ArcComplete = ArcComplete + '|' + val;
+					}
+
+					var save_content = Arc + '\n' + CurrentLine + '\n' + ArcComplete;
+
+					saveCheckPoint();
+
+				case 'SETMARKER':
+					marker = 1;
+					break;
+				case 'DELMARKER':
+					marker = 0;
 					break;
 			}	
 		}
 	}
 }
+
+
+//function WriteFile() {
+//	var blob = new Blob(["This is my first text."], {type: "text/plain;charset=utf-8"});
+//	saveAs(blob, "testfile1.txt");
+//}
+
+text = 'Hello world!';
+
+makeTextFile = function (text) {
+	var data = new Blob([text], {type: 'text/plain'});
+
+	// If we are replacing a previously generated file we need to
+	// manually revoke the object URL to avoid memory leaks.
+	if (textFile !== null) {
+	  window.URL.revokeObjectURL(textFile);
+	}
+
+	textFile = window.URL.createObjectURL(data);
+
+	return textFile;
+};
+
+makeTextFile;

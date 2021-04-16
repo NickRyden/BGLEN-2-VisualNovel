@@ -1,4 +1,4 @@
-[scene name="testscene"]
+[scene name="testscene" arc="3"]
 [bg img="bgMtn01.png"]
 
 // Possible use of UI buttons if not set globally

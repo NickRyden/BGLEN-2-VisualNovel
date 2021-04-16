@@ -1,0 +1,28 @@
+[scene source="char-select.html" arc="arcselect"]
+[bg img="city"]
+
+[char layer="1" source="UnityChan.png" effect="" left="50" flip="0"]
+
+[char layer="1" source="Kohaku/portrait_kohaku_B_01.png" effect="" left="-10" bottom="0" flip="0"]
+[char layer="2" source="Misaki/portrait_misaki_B_01.png" effect="" left="10" bottom="0" flip="0"]
+[char layer="3" source="Yuko/portrait_yuko_B_01.png" effect="" left="30" bottom="0" flip="0"]
+[char layer="4" source="Marie/portrait_marie_01.png" effect="" left="50" bottom="0" flip="0"]
+[char layer="5" source="Toko/portrait_toko_01.png" effect="" left="70" bottom="0" flip="0"]
+
+[msg char="Narrator"]
+Five friends walking home from school, talking about things to do on the weekend when <character name> suggests a slumber party.
+
+[char charpos="1" source="Kohaku/portrait_kohaku_01.png" effect="" left="-10" bottom="0" flip="0"]
+[char charpos="2" source="Misaki/portrait_misaki_01.png" effect="" left="10" bottom="0" flip="0"]
+[char charpos="3" source="Yuko/portrait_yuko_01.png" effect="" left="30" bottom="0" flip="0"]
+[char charpos="4" source="Marie/portrait_marie_01.png" effect="" left="50" bottom="0" flip="0"]
+[char charpos="5" source="Toko/portrait_toko_01.png" effect="" left="70" bottom="0" flip="0"]
+
+[bg img="bedroom"]
+At the slumber party, things have settled down after dinner, the 5 of them gather around a torch and begin telling Ghost stories.
+
+[SETMARKER]
+Select a Character to play through their story. It is recommended that you play this game at night, with the lights off to get the full effect of the environment.
+[DELMARKER]
+
+[ENDSCENE]

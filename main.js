@@ -4,6 +4,8 @@ const { app, BrowserWindow } = require('electron')
 
 var maindir   = 'resources/';
 
+var mysql = require('mysql');
+
 const fs = require('fs');
 const EventEmitter = require('events')
 

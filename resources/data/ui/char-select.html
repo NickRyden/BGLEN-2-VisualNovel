@@ -1,0 +1,155 @@
+<script>
+charselect = 1;
+</script>
+
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .arc-layer {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+    }
+    
+    .layer-norm {
+        height: 100%;
+        background: transparent;
+    }
+    
+    #base {
+        background: #898989;
+        z-index:0;
+    }
+    
+    #layer1 { z-index: 1; }
+    #layer2 { z-index: 2; }
+    #layer3 { z-index: 3; }
+    #layer4 { z-index: 4; }
+    #layer5 { z-index: 5; }
+    #message1 { z-index: 6; }
+    #message2 { z-index: 7; }
+    
+    #PostFX { 
+        position: absolute;
+        z-index: 8;
+        height: 100%;
+        width: 100%;
+        left: 0px;
+        top: 0px;
+    }
+    
+    .layer-msg {
+        position: absolute;
+        
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 85%;
+        
+        background: #000;
+        border-radius: 20px;
+        
+        opacity: 0.7;
+        width: 80vh;
+        height: 20vh;
+        
+        Color: #FFF;
+    }
+    
+    .msg-nameplate {
+        position: relative;
+        display: table;
+        
+        background: #FFF;
+        line-height: 5vh;
+        height: 5vh;
+        width: 20vh;
+        color: #FFF;
+        border-radius: 0px 5px;
+        margin-top: -5vh;
+        
+        border-radius: 15px 15px 0px 0px;
+        margin-left: 50px;
+        text-align: center;
+        background: #FFF;
+        font-size: 1.8vw;
+        font-style: normal;
+        font-family: 'Roboto Bold', sans-serif;
+        -webkit-text-stroke: 1px #23430C;
+        text-shadow: -1px 1px 2px #23430C, 1px 1px 2px #23430C, 1px -1px 0 #23430C, -1px -1px 0 #23430C;
+    }
+    
+    .msgbox-wrapper {
+        position: relative;
+        margin: 2.5% auto;
+        height: 80%;
+        width: 90%;
+        font-size: 1.2rem;
+        background: transparent;
+        color: #FFF;
+    }
+    
+    #clock-place {
+        transform: scale(1); 
+        transform-origin: 0 0;
+    }
+    
+    #span-time {
+        height: 100px;
+        width: 300px;
+        font-weight: bold;
+        font-size: calc(14px + 0.3vh);
+    }
+
+    img {
+        border: 0px;
+        outline: none;
+    }
+
+    .char-item {
+        position: absolute;
+        bottom: 30vh;
+        height: 50vh;
+        width: calc(100% / 5);
+        background: transparent;
+    }
+
+    #layer5 {
+        width: 100%;
+        left: 10vw;
+    }
+
+    .char-wrapper {
+        height: 100%;
+        width: 100%;
+    }
+</style>
+
+<body>
+
+<div class="arc-layer layer-norm" id="base"></div>
+<div class="arc-layer layer-norm" id="layer1"></div>
+<div class="arc-layer layer-norm" id="layer2"></div>
+<div class="arc-layer layer-norm" id="layer3"></div>
+<div class="arc-layer layer-norm" id="layer4"></div>
+<div class="arc-layer layer-norm" id="layer5">
+    <div class="char-item" id="char1"></div>
+    <div class="char-item" id="char2"></div>
+    <div class="char-item" id="char3"></div>
+    <div class="char-item" id="char4"></div>
+    <div class="char-item" id="char5"></div>
+</div>
+
+<div class="arc-layer layer-msg" id="message1">
+    <div class="msg-nameplate"></div>
+    <div class="msgbox-wrapper" id="msgbox-wrapper"></div>
+</div>
+</body>
+
+<script>
+var Arc = 'arcselect';
+charselect = 0;
+</script>
