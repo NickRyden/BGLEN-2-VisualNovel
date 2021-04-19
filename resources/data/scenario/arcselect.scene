@@ -1,13 +1,11 @@
 [scene source="char-select.html" arc="arcselect"]
 [bg img="city"]
-
-[char layer="1" source="UnityChan.png" effect="" left="50" flip="0"]
-
-[char layer="1" source="Kohaku/portrait_kohaku_B_01.png" effect="" left="-10" bottom="0" flip="0"]
-[char layer="2" source="Misaki/portrait_misaki_B_01.png" effect="" left="10" bottom="0" flip="0"]
-[char layer="3" source="Yuko/portrait_yuko_B_01.png" effect="" left="30" bottom="0" flip="0"]
-[char layer="4" source="Marie/portrait_marie_01.png" effect="" left="50" bottom="0" flip="0"]
-[char layer="5" source="Toko/portrait_toko_01.png" effect="" left="70" bottom="0" flip="0"]
+ 
+[charsel charlayer="1" source="Kohaku/portrait_kohaku_B_01.png" effect="" left="-10" bottom="0" flip="0"]
+[charsel charlayer="2" source="Misaki/portrait_misaki_B_01.png" effect="" left="10" bottom="0" flip="0"]
+[charsel charlayer="3" source="Yuko/portrait_yuko_B_01.png" effect="" left="30" bottom="0" flip="0"]
+[charsel charlayer="4" source="Marie/portrait_marie_01.png" effect="" left="50" bottom="0" flip="0"]
+[charsel charlayer="5" source="Toko/portrait_toko_01.png" effect="" left="70" bottom="0" flip="0"]
 
 [msg char="Narrator"]
 Five friends walking home from school, talking about things to do on the weekend when <character name> suggests a slumber party.

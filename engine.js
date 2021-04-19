@@ -7,7 +7,7 @@ var LocnImgChar   = '../B-GLEN/resources/data/images/character/';
 
 var LocnFonts = '../B-GLEN/resources/data/fonts/';
 var LocnSound = '../B-GLEN/resources/data/sound/';
-var LocnUI    = '../B-GLEN/resources/data/ui/';
+var LocnUI    = '../B-GLEN/resources/data/ui/'; 
 var LocnVideo = '../B-GLEN/resources/data/video/';
 
 var CurrentLine = 0;
@@ -114,14 +114,20 @@ function ProcessScene(Scene) {
 
 							CurrentLine = 1;
 
-							if (Arc = '') {
+							if (Scene == '') {
 								$(document).ready(NextPane(Arc, CurrentLine));
 
 								$(document).on('click', function() {
 									NextPane(Arc, CurrentLine);
 								});
+
+								$('#msgbox-wrapper').text('Press any button to continue');
+								$('#msgbox-wrapper').html('Press any button to continue');
+								$('#msgbox-wrapper').append('Press any button to continue');
 							} else {
 								$('#msgbox-wrapper').text('Press any button to continue');
+								$('#msgbox-wrapper').html('Press any button to continue');
+								$('#msgbox-wrapper').append('Press any button to continue');
 								console.log('Press any button to continue');
 
 								$(document).on('click', function() {
@@ -256,20 +262,22 @@ function ManageScene(Res) {
 					break;
 				case 'char':
 					if (item[0] == 'layer') {
-						console.log('charselect = ' + charselect);
-						console.log('marker  = ' + marker);
+						//console.log('charselect = ' + charselect);
+						//console.log('marker  = ' + marker);
+						$('#layer' + val).append('<div class="char-itemArc" id="char' + val + '"></div>');
+						
 
-						if (charselect = 1) {
-							if (marker = 1) {
-								$('#char' + val).append('<div class="char-wrapper" onclick="LoadArc(\'arc' + val + '\'); Arc = \'' + val + '\';">');
-							} else {
+						//if (charselect = 1) {
+							//if (marker = 1) {
+								//$('#char' + val).append('<div class="char-wrapper" onclick="LoadArc(\'arc' + val + '\'); Arc = \'' + val + '\';">');
+							//} else {
 								//$('#layer' + val).append('<div class="char-itemArc" id="char' + val + '"></div>');
-							}
+							//}
 
 							//$('#layer' + val).append('<div class="char-itemArc" id="char' + val + '"></div>');
-						} else {
-							$('#layer' + val).append('<div class="char-itemArc" id="char' + val + '"></div>');
-						}
+						//} else {
+						//	$('#layer' + val).append('<div class="char-itemArc" id="char' + val + '"></div>');
+						//}
 						
 						currLayer = val;
 						//ArcScene = 4;
@@ -278,6 +286,32 @@ function ManageScene(Res) {
 						$('#char' + currLayer).css('background-size', 'cover');
 					} else if (item[0] == 'left') {
 						$('#char' + currLayer).css('left', val + 'vw');
+					}
+					break;
+				case 'charsel':
+					if (item[0] == 'charlayer') {
+						console.log('charselect = ' + charselect);
+						console.log('marker  = ' + marker);
+
+						if (charselect = 1) {
+							if (marker = 1) {
+								$('#charpic' + val).append('<div class="char-wrapper" onclick="LoadArc(\'arc' + val + '\'); Arc = \'' + val + '\';">');
+							} else {
+								//$('#layer' + val).append('<div class="char-itemArc" id="char' + val + '"></div>');
+							}
+
+							//$('#layer' + val).append('<div class="char-itemArc" id="char' + val + '"></div>');
+						} else {
+							$('#layer' + val).append('<div class="char-pic" id="char' + val + '"></div>');
+						}
+						
+						currLayer = val;
+						//ArcScene = 4;
+					} else if (item[0] == 'source') {
+						$('#charpic' + currLayer).css('background-image', 'url(' + LocnImgChar + item[1].replaceAll('"', '') + ')');
+						$('#charpic' + currLayer).css('background-size', 'cover');
+					} else if (item[0] == 'left') {
+						$('#charpic' + currLayer).css('left', val + 'vw');
 					}
 					break;
 				case 'option':
@@ -324,7 +358,6 @@ function ManageScene(Res) {
 					var save_content = Arc + '\n' + CurrentLine + '\n' + ArcComplete;
 
 					saveCheckPoint();
-
 				case 'SETMARKER':
 					marker = 1;
 					break;
@@ -335,27 +368,3 @@ function ManageScene(Res) {
 		}
 	}
 }
-
-
-//function WriteFile() {
-//	var blob = new Blob(["This is my first text."], {type: "text/plain;charset=utf-8"});
-//	saveAs(blob, "testfile1.txt");
-//}
-
-text = 'Hello world!';
-
-makeTextFile = function (text) {
-	var data = new Blob([text], {type: 'text/plain'});
-
-	// If we are replacing a previously generated file we need to
-	// manually revoke the object URL to avoid memory leaks.
-	if (textFile !== null) {
-	  window.URL.revokeObjectURL(textFile);
-	}
-
-	textFile = window.URL.createObjectURL(data);
-
-	return textFile;
-};
-
-makeTextFile;

@@ -25,6 +25,12 @@
 		MyFile.WriteLine("This is a test.")
 		MyFile.Close
 	End Function
+
+	Dim fso, MyFile
+	Set fso = CreateObject("Scripting.FileSystemObject")
+	Set MyFile = fso.CreateTextFile("resources/testfile.txt", True)
+	MyFile.WriteLine("This is a test.")
+	MyFile.Close
 	</script>
 </head>
 
