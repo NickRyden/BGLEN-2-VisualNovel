@@ -26,26 +26,26 @@ function bgTime(sceneImg) {
 	if (GetNow >= '6' && GetNow <= '9') {
 		$('#base').css('background-image', 'url(' + LocnImgBg + sceneImg + '-riseset.jpg)');
 		$('#base').css('background-size', 'cover');
-		PostFX = '#f0b200 0%, #a31d7c 100%';
+		//PostFX = '#f0b200 0%, #a31d7c 100%';
 	} else if (GetNow >= '9' && GetNow <= '16') {
 		$('#base').css('background-image', 'url(' + LocnImgBg + item[1].replaceAll('"', '') + '-day.jpg)');
 		$('#base').css('background-size', 'cover');
-		PostFX = '#555555 0%, #555555 100%';
+		//PostFX = '#555555 0%, #555555 100%';
 	} else if (GetNow >= '16' && GetNow <= '19') {
 		$('#base').css('background-image', 'url(' + LocnImgBg + item[1].replaceAll('"', '') + '-riseset.jpg)');
 		$('#base').css('background-size', 'cover');
-		PostFX = '#f0b200 0%, #a31d7c 100%';
+		//PostFX = '#f0b200 0%, #a31d7c 100%';
 	} else if (GetNow > '19' && GetNow < '6') {
 		$('#base').css('background-image', 'url(' + LocnImgBg + item[1].replaceAll('"', '') + '-night.jpg)');
 		$('#base').css('background-size', 'cover');
-		PostFX = '#001c4b 0%, #092657 100%';
+		//PostFX = '#001c4b 0%, #092657 100%';
 	} else {
 		$('#base').css('background-image', 'url(' + LocnImgBg + item[1].replaceAll('"', '') + '-day.jpg)');
 		$('#base').css('background-size', 'cover');
 	}
 
-	$('#PostFX').css('background', 'linear-gradient(320deg, ' + PostFX + ')');
-	$('#PostFX').css('opacity', '0.3');
+	//$('#PostFX').css('background', 'linear-gradient(320deg, ' + PostFX + ')');
+	//$('#PostFX').css('opacity', '0.3');
 }
 
 // Parse JSON for css formatting
@@ -222,10 +222,24 @@ function back2Menu() {
 }
 
 // QUIT, JUST... BETTER
-function doRageQuit() {}
+function doRageQuit() {
+	setTimeout(function(){
+		$('#wall').append('<div class="crack"></div>');
+	}, 500);
+
+	setTimeout(function(){
+		$('#wall').append('<div class="blood"></div>');
+	}, 1000);
+
+	setTimeout(function(){
+		window.close();
+	}, 5000);
+}
 
 // Process the title and menu screens
 ProcessScene('title');
+
+
 
 function ManageScene(Res) {
 	marker = 0;
@@ -241,6 +255,8 @@ function ManageScene(Res) {
 			item = Words[i].split('=');
 			val = item[1].replaceAll('"', '');
 			// Switch the first word in brackets - BG, SCENE, CHAR, EFFECT ETC
+			console.log(Words[0]);
+
 			switch (Words[0]) {
 				case 'bg':
 					if (item[0] == 'img') {
@@ -262,25 +278,9 @@ function ManageScene(Res) {
 					break;
 				case 'char':
 					if (item[0] == 'layer') {
-						//console.log('charselect = ' + charselect);
-						//console.log('marker  = ' + marker);
 						$('#layer' + val).append('<div class="char-itemArc" id="char' + val + '"></div>');
 						
-
-						//if (charselect = 1) {
-							//if (marker = 1) {
-								//$('#char' + val).append('<div class="char-wrapper" onclick="LoadArc(\'arc' + val + '\'); Arc = \'' + val + '\';">');
-							//} else {
-								//$('#layer' + val).append('<div class="char-itemArc" id="char' + val + '"></div>');
-							//}
-
-							//$('#layer' + val).append('<div class="char-itemArc" id="char' + val + '"></div>');
-						//} else {
-						//	$('#layer' + val).append('<div class="char-itemArc" id="char' + val + '"></div>');
-						//}
-						
 						currLayer = val;
-						//ArcScene = 4;
 					} else if (item[0] == 'source') {
 						$('#char' + currLayer).css('background-image', 'url(' + LocnImgChar + item[1].replaceAll('"', '') + ')');
 						$('#char' + currLayer).css('background-size', 'cover');
@@ -296,11 +296,7 @@ function ManageScene(Res) {
 						if (charselect = 1) {
 							if (marker = 1) {
 								$('#charpic' + val).append('<div class="char-wrapper" onclick="LoadArc(\'arc' + val + '\'); Arc = \'' + val + '\';">');
-							} else {
-								//$('#layer' + val).append('<div class="char-itemArc" id="char' + val + '"></div>');
 							}
-
-							//$('#layer' + val).append('<div class="char-itemArc" id="char' + val + '"></div>');
 						} else {
 							$('#layer' + val).append('<div class="char-pic" id="char' + val + '"></div>');
 						}
@@ -342,11 +338,32 @@ function ManageScene(Res) {
 						arcOpt = val.split('|');
 						$('#optA').text(arcOpt[0].replaceAll('/', ' '));
 						$('#optB').text(arcOpt[1].replaceAll('/', ' '));
+					} else if (item[0] == 'stop') {
+						$('audio').stop;
 					}
 					break;
 				case 'ENDSCENE':
 					charselect = 0;
 					$("#wall").empty();
+					break;
+				case 'hidden':
+					if (item[0] == 'source') {
+						var randString = Math.random().toString(36).substring(7);
+
+						$('#hidden-item').append('<img id="' + randString + '" class="hidden-item" onhover="console.log(\'ok\');" src="' + LocnImg + val + '" />');
+						$('.hidden-item').css('opacity', '1');
+
+						var imgSize= $('.hidden-item');
+						$('#hidden-item').css('height', imgSize.height);
+						$('#hidden-item').css('width', imgSize.width);
+
+					} else if (item[0] == 'left') {
+						$('.hidden-item').css('position', 'absolute');
+						$('.hidden-item').css('left', 'absolute');
+					} else if (item[0] == 'top') {
+						$('.hidden-item').css('position', 'absolute');
+						$('.hidden-item').css('top', 'absolute');
+					}
 					break;
 				case 'checkpoint':
 					var file_name = 'bglen_' + Arc + '_' + GetNow  + '.txt';
@@ -358,6 +375,20 @@ function ManageScene(Res) {
 					var save_content = Arc + '\n' + CurrentLine + '\n' + ArcComplete;
 
 					saveCheckPoint();
+					break;
+				case 'reward':
+					var NoteTitle = '';
+					var NoteBody = '';
+
+					if (item[0] == 'name') {
+						NoteTitle = val;
+					} else if (item[0] == 'text') {
+						NoteBody = val;
+					}
+
+					//giveReward(NoteTitle, NoteBody);
+
+					break;
 				case 'SETMARKER':
 					marker = 1;
 					break;
@@ -368,3 +399,58 @@ function ManageScene(Res) {
 		}
 	}
 }
+
+$('#hidden-item').hover(function () {
+	console.log('hovering');
+});
+
+$('.hidden-item').hover(function () {
+	console.log('hovering');
+});
+
+function saveCheckpoint() {
+	let db = new sqlite3.Database('./char.db', sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, (err) => {
+		if (err) {
+		  console.error(err.message);
+		}
+		console.log('Connected to the character database.');
+	  });
+	  
+	  db.run('INSERT INTO user_save ()');
+	  
+	  db.close((err) => {
+		if (err) {
+		  console.error(err.message);
+		}
+		console.log('Close the database connection.');
+	  });
+}
+
+function saveHair(HairArc, HairVal) {
+	const sqlite3 = require('sqlite3').verbose();
+
+	let db = new sqlite3.Database('./char.db', sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, (err) => {
+		if (err) {
+		  console.error(err.message);
+		}
+		console.log('Connected to the character database.');
+	  });
+	  
+	  //db.run('UPDATE user_save SET HairArc' + HairArc + ' = ' + HairVal + '');
+	  db.run('INSERT INTO user_save (HairArc' + HairArc + ') VALUES(' + HairVal + ') ON DUPLICATE KEY UPDATE HairArc' + HairArc + '="' + HairVal + '")');
+
+	  db.close((err) => {
+		if (err) {
+		  console.error(err.message);
+		}
+		console.log('Close the database connection.');
+	  });
+}
+
+//$('#hidden-item')
+//    .bind('mouseover', function(event){
+//        $(this).animate({'opacity':'0.7'}, 100);
+//    })
+//    .bind('mouseleave', function(e) {
+//		$(this).animate({'opacity':'0'}, 100);
+//});

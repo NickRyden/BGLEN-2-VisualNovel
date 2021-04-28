@@ -14,24 +14,8 @@
 	
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" onload="window.$ = window.jQueryui = module.exports;"></script>
-	
-	<!--<script src="renderer.js"></script>-->
 
-	<script type="text/vbscript">
-	Function saveCheckPoint ()
-		Dim fso, MyFile
-		Set fso = CreateObject("Scripting.FileSystemObject")
-		Set MyFile = fso.CreateTextFile("C:\Users\nickr\OneDrive\Documents\TestFolder\testfile.txt", True)
-		MyFile.WriteLine("This is a test.")
-		MyFile.Close
-	End Function
-
-	Dim fso, MyFile
-	Set fso = CreateObject("Scripting.FileSystemObject")
-	Set MyFile = fso.CreateTextFile("resources/testfile.txt", True)
-	MyFile.WriteLine("This is a test.")
-	MyFile.Close
-	</script>
+	<script src="renderer.js"></script>
 </head>
 
 <body>

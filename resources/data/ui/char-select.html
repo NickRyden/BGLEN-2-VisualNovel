@@ -136,11 +136,71 @@ charselect = 1;
 <div class="arc-layer layer-norm" id="layer3"></div>
 <div class="arc-layer layer-norm" id="layer4"></div>
 <div class="arc-layer layer-norm" id="layer5">
-    <div class="char-pic" id="charpic1"></div>
-    <div class="char-pic" id="charpic2"></div>
-    <div class="char-pic" id="charpic3"></div>
-    <div class="char-pic" id="charpic4"></div>
-    <div class="char-pic" id="charpic5"></div>
+    <div class="char-pic" id="charpic1">
+        <div class="char-hair">
+            <input type="radio" id="char1-opt-hair-black" name="char1hair" value="1" checked="checked" onclick="changeHair('char1', 'black');">
+            <label for="char1-opt-hair-black">1</label>
+            <input type="radio" id="char1-opt-hair-brown" name="char1hair" value="2" onclick="changeHair('char1', 'brown');">
+            <label for="char1-opt-hair-brown">2</label>
+            <input type="radio" id="char1-opt-hair-orange" name="char1hair" value="3" onclick="changeHair('char1', 'red');">
+            <label for="char1-opt-hair-orange">3</label>
+            <input type="radio" id="char1-opt-hair-red" name="char1hair" value="4" onclick="changeHair('char1', 'orange');">
+            <label for="char1-opt-hair-red">4</label>
+        </div>
+    </div>
+
+
+    <div class="char-pic" id="charpic2">
+        <div class="char-hair">
+            <input type="radio" id="char2-opt-hair-black" name="char2hair" value="1" checked="checked" onclick="changeHair('char2', 'black');">
+            <label for="char2-opt-hair-black">1</label>
+            <input type="radio" id="char2-opt-hair-brown" name="char2hair" value="2" onclick="changeHair('char2', 'brown');">
+            <label for="char2-opt-hair-brown">2</label>
+            <input type="radio" id="char2-opt-hair-orange" name="char2hair" value="3" onclick="changeHair('char2', 'red');">
+            <label for="char2-opt-hair-orange">3</label>
+            <input type="radio" id="char2-opt-hair-red" name="char2hair" value="4" onclick="changeHair('char2', 'orange');">
+            <label for="char2-opt-hair-red">4</label>
+        </div>
+    </div>
+
+    <div class="char-pic" id="charpic3">
+        <div class="char-hair">
+            <input type="radio" id="char3-opt-hair-black" name="char3hair" value="1" checked="checked" onclick="changeHair('char3', 'black');">
+            <label for="char3-opt-hair-black">1</label>
+            <input type="radio" id="char3-opt-hair-brown" name="char3hair" value="2" onclick="changeHair('char3', 'brown');">
+            <label for="char3-opt-hair-brown">2</label>
+            <input type="radio" id="char3-opt-hair-orange" name="char3hair" value="3" onclick="changeHair('char3', 'red');">
+            <label for="char3-opt-hair-orange">3</label>
+            <input type="radio" id="char3-opt-hair-red" name="char3hair" value="4" onclick="changeHair('char3', 'orange');">
+            <label for="char3-opt-hair-red">4</label>
+        </div>
+    </div>
+
+    <div class="char-pic" id="charpic4">
+        <div class="char-hair">
+            <input type="radio" id="char4-opt-hair-black" name="char4hair" value="1" checked="checked" onclick="changeHair('char4', 'black'); saveHair(4, 1)">
+            <label for="char4-opt-hair-black" onclick="changeHair('char4', 'black');">1</label>
+            <input type="radio" id="char4-opt-hair-brown" name="char4hair" value="2" onclick="changeHair('char4', 'brown'); saveHair(4, 2)">
+            <label for="char4-opt-hair-brown" onclick="changeHair('char4', 'black');">2</label>
+            <input type="radio" id="char4-opt-hair-orange" name="char4hair" value="3" onclick="changeHair('char4', 'red'); saveHair(4, 3)">
+            <label for="char4-opt-hair-orange" onclick="changeHair('char4', 'black');">3</label>
+            <input type="radio" id="char4-opt-hair-red" name="char4hair" value="4" onclick="changeHair('char4', 'orange'); saveHair(4, 4)">
+            <label for="char4-opt-hair-red" onclick="changeHair('char4', 'black');">4</label>
+        </div>    
+    </div>
+
+    <div class="char-pic" id="charpic5">
+        <div class="char-hair">
+            <input type="radio" id="char5-opt-hair-black" name="char5hair" value="1" checked="checked" onclick="changeHair('char5', 'black');">
+            <label for="char5-opt-hair-black">1</label>
+            <input type="radio" id="char5-opt-hair-brown" name="char5hair" value="2" onclick="changeHair('char5', 'brown');">
+            <label for="char5-opt-hair-brown">2</label>
+            <input type="radio" id="char5-opt-hair-orange" name="char5hair" value="3" onclick="changeHair('char5', 'red');">
+            <label for="char5-opt-hair-orange">3</label>
+            <input type="radio" id="char5-opt-hair-red" name="char5hair" value="4" onclick="changeHair('char5', 'orange');">
+            <label for="char5-opt-hair-red">4</label>
+        </div>
+    </div>
 </div>
 
 <div class="arc-layer layer-msg" id="message1">
@@ -152,4 +212,33 @@ charselect = 1;
 <script>
 var Arc = 'arcselect';
 charselect = 0;
+
+
+function changeHair(char, color) {
+    switch (char) {
+        case 'char1':
+            CharDiv = $('#charpic1');
+            CharImg = LocnImgChar + 'Kohaku/portrait_kohaku_B_03';
+            break;
+        case 'char2':
+            CharDiv = $('#charpic2');
+            CharImg = LocnImgChar + 'Misaki/portrait_misaki_B_01';
+            break;
+        case 'char3':
+            CharDiv = $('#charpic3');
+            CharImg = LocnImgChar + 'Yuko/portrait_yuko_B_01';
+            break;
+        case 'char4':
+            CharDiv = $('#charpic4');
+            CharImg = LocnImgChar + 'Marie/portrait_marie_01';
+            break;
+        case 'char5':
+            CharDiv = $('#charpic5');
+            CharImg = LocnImgChar + 'Toko/portrait_toko_01';
+            break;
+    }
+
+    CharDiv.css('background-image', 'url(' + CharImg + '_' + color + '.png)');
+    CharDiv.css('background-size', 'cover');
+}
 </script>

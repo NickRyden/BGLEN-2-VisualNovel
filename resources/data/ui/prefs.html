@@ -1,7 +1,23 @@
 <!DOCTYPE html>
 
 <style>
+@keyframes wheelHueColor {
+    from, to { background: hsl(324, 70%, 45%); }
+    10%      { background: hsl(360, 65%, 45%); }
+    20%      { background: hsl( 36, 80%, 45%); }
+    30%      { background: hsl(288, 60%, 40%); }
+    40%      { background: hsl(324, 70%, 45%); }
+    50%      { background: hsl(360, 65%, 45%); }
+    60%      { background: hsl( 36, 80%, 45%); }
+    70%      { background: hsl(288, 60%, 40%); }
+    80%      { background: hsl(324, 70%, 45%); }
+    90%      { background: hsl(360, 65%, 45%); }
+}
 
+#wall {
+    background: hsl(324, 70%, 45%);
+    animation: wheelHueColor 60s infinite;
+}
 </style>
 
 <div onclick="back2Menu();">Back to menu</div>
@@ -12,7 +28,7 @@
 	<li>Windowed</li>
 
 	<li>Full Screen</li>
-	<h3>Transitins</h3>
+	<h3>Transitions</h3>
 	<li>All</li>
 	<li>None</li>
 

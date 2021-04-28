@@ -98,6 +98,26 @@ body {
 	left: 30px;
 	font-size: 8vh;
 }
+
+.crack, .blood {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background: #000;
+}
+
+.crack {
+	background: url('../B-GLEN/resources/data/ui/crack.png');
+	background-size: cover;
+	z-index: 98;
+}
+.blood {
+	z-index: 99;
+	background: url('../B-GLEN/resources/data/ui/blood.png');
+	background-size: cover;
+}
 </style>
 
 <div id="menu-bg">
@@ -111,6 +131,11 @@ body {
 		<span class="opt-btn" onclick="window.close();">Quit</span>
 		<span class="opt-btn" onclick="doRageQuit();">Rage Quit</span>
 	</div>
+
+	<audio autoplay loop>
+		<source src="../B-GLEN/resources/data/sound/intro.mp3" type="audio/ogg">
+		Your browser does not support the audio element.
+	</audio>
 	
 	<div id="app-char">
 		<img src="resources/data/images/character/misaki_norm.png" class="charMisaki char-menu" id="char2" />

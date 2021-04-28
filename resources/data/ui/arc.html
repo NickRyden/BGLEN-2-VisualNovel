@@ -108,6 +108,12 @@
 	border-radius: 5px;
 }
 
+#hidden-item{
+	height: 500px;
+	width: 500px;
+	z-index: 9998;
+}
+
 </style>
 
 <body onload="startTime()">
@@ -119,12 +125,14 @@
 <div class="arc-layer layer-norm" id="layer4"></div>
 <div class="arc-layer layer-norm" id="layer5"></div>
 
-<div class="PostFX" id="PostFX"></div>
+
 
 <div class="arc-layer layer-msg" id="message1">
 	<div class="msg-nameplate"></div>
 	<div class="msgbox-wrapper" id="msgbox-wrapper"></div>
 </div>
+
+<div id="hidden-item" onhover="console.log('ok');"></div>
 </body>
 
 
