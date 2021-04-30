@@ -374,7 +374,6 @@ function ManageScene(Res) {
 
 					var save_content = Arc + '\n' + CurrentLine + '\n' + ArcComplete;
 
-					saveCheckPoint();
 					break;
 				case 'reward':
 					var NoteTitle = '';
@@ -408,44 +407,7 @@ $('.hidden-item').hover(function () {
 	console.log('hovering');
 });
 
-function saveCheckpoint() {
-	let db = new sqlite3.Database('./char.db', sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, (err) => {
-		if (err) {
-		  console.error(err.message);
-		}
-		console.log('Connected to the character database.');
-	  });
-	  
-	  db.run('INSERT INTO user_save ()');
-	  
-	  db.close((err) => {
-		if (err) {
-		  console.error(err.message);
-		}
-		console.log('Close the database connection.');
-	  });
-}
 
-function saveHair(HairArc, HairVal) {
-	const sqlite3 = require('sqlite3').verbose();
-
-	let db = new sqlite3.Database('./char.db', sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, (err) => {
-		if (err) {
-		  console.error(err.message);
-		}
-		console.log('Connected to the character database.');
-	  });
-	  
-	  //db.run('UPDATE user_save SET HairArc' + HairArc + ' = ' + HairVal + '');
-	  db.run('INSERT INTO user_save (HairArc' + HairArc + ') VALUES(' + HairVal + ') ON DUPLICATE KEY UPDATE HairArc' + HairArc + '="' + HairVal + '")');
-
-	  db.close((err) => {
-		if (err) {
-		  console.error(err.message);
-		}
-		console.log('Close the database connection.');
-	  });
-}
 
 //$('#hidden-item')
 //    .bind('mouseover', function(event){
