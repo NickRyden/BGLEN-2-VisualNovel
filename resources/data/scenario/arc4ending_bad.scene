@@ -7,3 +7,5 @@
 
 [msg char="Narrator"]
 All the girls awoke to lights and sirens outside their window. Everyone jumped out of bed to reveal the tragedy on the street below. Haruka had taken her own life overnight by jumping off the apartment balcony
+
+[option result="home|quit" options="Return/to/home.|quit"]

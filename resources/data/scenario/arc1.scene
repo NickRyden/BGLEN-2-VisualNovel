@@ -5,7 +5,7 @@
 
 [ui_btn name="" action=""]
 
-[char layer="1" source="UnityChan.png" effect="" left="50" flip="0"]
+[char layer="1" source="UnityChan.png" effect="" left="50" bottom="0" scale="1.0" flip="0"]
 
 [msg char="Haruka"]
 Hi, I'm Haruka-chan

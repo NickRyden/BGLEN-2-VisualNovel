@@ -82,7 +82,14 @@ input[type=checkbox]:checked + label {
 	color: #FFF;
 }
 
-
+#menu-navigate {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	background: #000;
+}
 
 
 

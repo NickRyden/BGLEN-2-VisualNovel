@@ -206,19 +206,19 @@ function contGame() {}
 // Preferences UI - TO BE IMPLEMENTED
 function openPrefs() {
 	$("#menu").hide();
-	$("#title").hide();
-	$('#wall').load(LocnUI + 'prefs.html');
+	$('#wall').append('<div id="menu-navigate"></div>');
+	$('#menu-navigate').load(LocnUI + 'prefs.html');
 }
 
 function openCredits() {
 	$("#menu").hide();
-	$("#title").hide();
-	$('#wall').load(LocnUI + 'credits.html');
+	$('#wall').append('<div id="menu-navigate"></div>');
+	$('#menu-navigate').load(LocnUI + 'credits.html');
 }
 
 function back2Menu() {
+	$('#menu-navigate').remove();
 	$("#menu").show();
-	$('#wall').load('');
 }
 
 // QUIT, JUST... BETTER
@@ -278,14 +278,17 @@ function ManageScene(Res) {
 					break;
 				case 'char':
 					if (item[0] == 'layer') {
-						$('#layer' + val).append('<div class="char-itemArc" id="char' + val + '"></div>');
-						
+						$('#layer' + val).append('<div class="char-item" id="char' + val + '">');
 						currLayer = val;
 					} else if (item[0] == 'source') {
 						$('#char' + currLayer).css('background-image', 'url(' + LocnImgChar + item[1].replaceAll('"', '') + ')');
 						$('#char' + currLayer).css('background-size', 'cover');
 					} else if (item[0] == 'left') {
 						$('#char' + currLayer).css('left', val + 'vw');
+					} else if (item[0] == 'bottom') {
+						$('#char' + currLayer).css('bottom', val + 'vh');
+					} else if (item[0] == 'scale') {
+						$('#char' + currLayer).css('transform', 'scale(' + val + ')');
 					}
 					break;
 				case 'charsel':
@@ -312,13 +315,19 @@ function ManageScene(Res) {
 					break;
 				case 'option':
 					if (item[0] == 'result') {
-						$('.msgbox-wrapper').text('Choose an option:');
+						if (val == 'home|quit') {
+							$('.msgbox-wrapper').text('');
+							$('.msgbox-wrapper').append('<div class="btn-opt-res" id="optA" onclick="back2Menu();">Return to main menu</div>');
+							$('.msgbox-wrapper').append('<div class="btn-opt-res" id="optB" onclick="window.close();">Quit Game</div>');
+						} else {
+							$('.msgbox-wrapper').text('Choose an option:');
 
-						arcOptRes = val.split('|');
-
-						$('.msgbox-wrapper').append('<div class="btn-opt-res" id="optA" onclick="LoadArc(\'' + arcOptRes[0] + '\');"></div>');
-						$('.msgbox-wrapper').append('<div class="btn-opt-res" id="optB" onclick="LoadArc(\'' + arcOptRes[1] + '\');"></div>');
-					} else if (item[0] == 'options') {
+							arcOptRes = val.split('|');
+	
+							$('.msgbox-wrapper').append('<div class="btn-opt-res" id="optA" onclick="LoadArc(\'' + arcOptRes[0] + '\');"></div>');
+							$('.msgbox-wrapper').append('<div class="btn-opt-res" id="optB" onclick="LoadArc(\'' + arcOptRes[1] + '\');"></div>');
+						}
+					} else if (item[0] == 'pick') {
 						arcOpt = val.split('|');
 
 						$('#optA').text(arcOpt[0].replaceAll('/', ' '));
