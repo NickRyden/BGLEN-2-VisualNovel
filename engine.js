@@ -221,6 +221,12 @@ function back2Menu() {
 	$("#menu").show();
 }
 
+function ExitArc() {
+	$('#wall').remove();
+	$('body').append('<div id="wall"></div>');
+	ProcessScene('title');
+}
+
 // QUIT, JUST... BETTER
 function doRageQuit() {
 	setTimeout(function(){
