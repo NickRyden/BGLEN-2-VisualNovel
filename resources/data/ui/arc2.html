@@ -87,10 +87,10 @@
     transform-origin: 0 0;
 }
 
-.char-item {
+.char-itemArc {
 	position: absolute;
 	height: 90vh;
-	width: 55vw;
+	width: 15vw;
 }
 
 #span-time {
@@ -114,17 +114,9 @@
 	z-index: 9998;
 }
 
-
-#Arc-home-btn {
-	position: absolute;
-	top: 0px;
-	right: 10px;
-	z-index: 999;
-}
 </style>
 
 <body onload="startTime()">
-<div id="Arc-home-btn" onclick="ExitArc();">Back to Main Menu</div>
 
 <div class="arc-layer layer-norm" id="base"></div>
 <div class="arc-layer layer-norm" id="layer1"></div>
@@ -132,6 +124,8 @@
 <div class="arc-layer layer-norm" id="layer3"></div>
 <div class="arc-layer layer-norm" id="layer4"></div>
 <div class="arc-layer layer-norm" id="layer5"></div>
+
+
 
 <div class="arc-layer layer-msg" id="message1">
 	<div class="msg-nameplate"></div>

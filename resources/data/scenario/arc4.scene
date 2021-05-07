@@ -6,7 +6,8 @@
 
 [obj layer="layer5" source="clock.html"]
 
-[char layer="1" source="Marie/portrait_marie_01.png" effect="" left="50" bottom="0" flip="0"]
+[char layer="1" source="Marie/portrait_marie_01.png" left="50" bottom="0" scale="1.0" flip="0"]
+[char layer="2" source="Marie/portrait_marie_01.png" left="10" bottom="0" scale="0.5" flip="0"]
 
 [msg char="Haruka"]
 This story started when I was at home with my parents, Akio and Chiyo, a couple of years ago.
@@ -85,4 +86,6 @@ The police sat me down and consoled me at the death of my parents.
 
 I have been struggling with the fact, especially in the past months. It's almost graduation, and everyone and their parents have been so happy together. No one will be at my graduation. My old grandfather, who I'm living with, is too frail to make it to the graduation ceremony.
 
-[option result="arc4ending_good|arc4ending_bad" options="Stay/up/with/Haruka/and/chat/all/night|Go/to/sleep/because/you're/tired."]
+[option result="arc4ending_good|arc4ending_bad" pick="Stay/up/with/Haruka/and/chat/all/night|Go/to/sleep/because/you're/tired."]
+
+[ENDSCENE]
