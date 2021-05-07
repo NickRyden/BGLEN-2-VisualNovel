@@ -7,29 +7,8 @@ var maindir   = 'resources/';
 const fs = require('fs');
 const EventEmitter = require('events')
 
-require('./engine.js');
-
 const loadingEvents = new EventEmitter()
 const createMainWindow = () => new BrowserWindow()
-
-const sqlite3 = require('sqlite3').verbose();
-
-// open the database
-let db = new sqlite3.Database('./char.db', sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, (err) => {
-  if (err) {
-    console.error(err.message);
-  }
-  console.log('Connected to the character database.');
-});
-
-//db.run('CREATE TABLE user_save (id INTEGER PRIMARY KEY,	HairArc1 VARCHAR(5),HairArc2 VARCHAR(5),HairArc3 VARCHAR(5),HairArc4 VARCHAR(5),HairArc5 VARCHAR(5),Arc1Complete VARCHAR(5),Arc2Complete VARCHAR(5),Arc3Complete VARCHAR(5),Arc4Complete VARCHAR(5),Arc5Complete VARCHAR(5),CurrArc VARCHAR(10),CurrLine VARCHAR(10))');
-
-db.close((err) => {
-  if (err) {
-    console.error(err.message);
-  }
-  console.log('Close the database connection.');
-});
 
 let rawdata = fs.readFileSync(maindir + 'config.json');
 let data = JSON.parse(rawdata);
@@ -71,6 +50,3 @@ app.on('activate', () => {
 		createWindow()
 	}
 })
-
-
-
