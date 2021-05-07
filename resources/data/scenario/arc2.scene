@@ -5,7 +5,7 @@
 [bg img="living-room"]
 [sound param="cometh-the-visitor.mp3|loop"]
 
-[char name="Gwen" source="Gwen/gwen-happy-default.png" effect="" left="65" bottom="-30" scale="0.8" layer="2" flip="0"]
+[char name="Gwen" source="Gwen/gwen-happy-brown.png" effect="" left="65" bottom="-30" scale="0.8" layer="2" flip="0"]
 [msg char="PartyChick"]
 
 Gwen was at home alone on a Friday night. Her parents had gone out to dinner with some friends.
@@ -13,44 +13,62 @@ Gwen was at home alone on a Friday night. Her parents had gone out to dinner wit
 Gwen decided to make the most of an uninterrupted evening at home by watching a movie by herself.
 
 [bg img="kitchen"]
-[char name="Gwen" source="Gwen/gwen-surprised-default.png" effect="" left="71" bottom="-30" scale="0.5" layer="2" flip="0"]
-She decided to make some popcorn so she went into the kitchen and put a bag of microwave popcorn in the microwave. As she was waiting she heard a knock at the door.
+[char name="Gwen" source="Gwen/gwen-happy-brown.png" effect="" left="71" bottom="-30" scale="0.5" layer="2" flip="0"]
+She decided to make some popcorn so she went into the kitchen and put a bag of microwave popcorn in the microwave.
+
+[char name="Gwen" source="Gwen/gwen-surprised-brown.png" effect="" left="71" bottom="-30" scale="0.5" layer="2" flip="0"]
+[sound param="knock.mp3"]
+As she was waiting she heard a knock at the door.
 
 
 [bg img="front-door"]
-[char name="Gwen" source="Gwen/gwen-quizzical-default.png" effect="" left="26" bottom="-14" scale="0.75" layer="2" flip="0"]
+[char name="Gwen" source="Gwen/gwen-quizzical-brown.png" effect="" left="26" bottom="-15" scale="0.75" layer="2" flip="0"]
 She went to the door and opened it. There was no one there.
 
 She shrugged it off as that she just imagined the knocking and went back into the kitchen.
 
 [bg img="kitchen"]
-[char name="Gwen" source="Gwen/gwen-surprised-default.png" effect="" left="71" bottom="-30" scale="0.5" layer="2" flip="0"]
+[char source="Gwen/gwen-surprised-brown.png" effect="" left="71" bottom="-30" scale="0.5" layer="2" flip="0"]
+[sound param="knock.mp3"]
 As she got back into the kitchen there was another knock. She knew she couldn’t have imagined it this time. 
 
 [bg img="front-door"]
-[char name="Gwen" source="Gwen/gwen-annoyed-default.png" effect="" left="26" bottom="-18" scale="0.7" layer="2" flip="0"]
+[char name="Gwen" source="Gwen/gwen-annoyed-brown.png" effect="" left="26" bottom="-18" scale="0.7" layer="2" flip="0"]
 Once again when she opened the door there was no one there. She closed the door and put the deadbolt on.
 
 [bg img="living-room"]
-[char name="Gwen" source="Gwen/gwen-worried-default.png" effect="" left="71" bottom="-12" scale="0.8" layer="2" flip="0"]
-Gwen sat down with her popcorn and started watching the movie. A few minutes in she heard a high pitched giggle coming from the kitchen.
+[char name="Gwen" source="Gwen/gwen-happy-brown.png" effect="" left="71" bottom="-12" scale="0.8" layer="2" flip="0"]
+Gwen sat down with her popcorn and started watching the movie.
+
+[char name="Gwen" source="Gwen/gwen-worried-brown.png" effect="" left="71" bottom="-12" scale="0.8" layer="2" flip="0"]
+[sound param="giggle.mp3"]
+A few minutes in she heard a high pitched giggle coming from the kitchen.
 
 Her head whipped around but she didn’t see anyone. In a panic she ran to the front door but she couldn’t open the deadbolt.
 
 [bg img="kitchen-alt"]
-[char name="Gwen" source="Gwen/gwen-scared-default.png" effect="" left="78" bottom="-50" scale="1.4" layer="2" flip="0"]
-[char name="shadow" source="shadow-man.png" effect="" left="0" bottom="-22" scale="0.6" layer="4" flip="0"]
+[char layer="2" name="Gwen" source="Gwen/gwen-scared-brown.png" effect="" left="78" bottom="-50" scale="1.4" flip="0"]
+[char layer="4" name="shadow" source="shadow-man.png" effect="" left="0" bottom="-22" scale="0.6"  flip="0"]
 As she ran toward the back door instead, she noticed a dark shadowy figure stood in the doorway at the back of the kitchen.
 
+[sound param="giggle.mp3"]
 Suddenly the figure charged toward Gwen emitting a high pitched giggle and knocking her unconscious.
 
 [bg img="black"]
 
 [bg img="living-room-popcorn"]
-[char name="Gwen" source=""]
-[char name="shadow" source=""]
-When Gwen’s parents returned from dinner they couldn’t open the front door because of the dead bolt. They knocked expecting Gwen to open the door as all the lights were on but she didn’t answer.
+[char layer="2" name="Gwen" source="Gwen/gwen-scared-brown.png" effect="" left="78" bottom="-50" scale="0" flip="0"]
+[char layer="4" name="shadow" source="shadow-man.png" effect="" left="0" bottom="-22" scale="0"  flip="0"]
+When Gwen’s parents returned from dinner they couldn’t open the front door because of the dead bolt.
 
-They went around the back and found the back door wide open. There was popcorn all over the floor and the TV was on but Gwen was no where in the house.
+They knocked expecting Gwen to open the door as all the lights were on but she didn’t answer.
+
+They went around the back and found the back door wide open.
+
+There was popcorn all over the floor and the TV was on but Gwen was no where in the house.
 
 She was gone...
+
+[option result="arc2ending_good" pick="Pick the ending."]
+
+[ENDSCENE]
