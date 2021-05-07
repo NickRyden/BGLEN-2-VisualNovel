@@ -1,36 +1,120 @@
-[scene name="testscene" arc="5"]
-[bg img="bgMtn01.png"]
+[scene source="arc.html" arc="5"]
+[bg img="livingroom5"]
+[checkpoint]
 
-// Possible use of UI buttons if not set globally
-[ui_btn name="" action=""]
+[sound param="Kaiseki.mp3|loop"]
 
-// Place a character in the scene, optional effect, e.g. from left, from right teleport in etc.
-[char name="" img="UnityChan.png" effect="" left="170" bottom="0" layer="1" flip="0"]
+[obj layer="layer5" source="clock.html"]
 
-// Example of what appears on which  layer. Set to false at the end of every instance if necessary
-[msg layer="message0" visible="true"]
+[char layer="1" source="Toko/portrait_toko_01_orange.png" effect="" left="50" bottom="0" flip="0"]
 
-// Example of a dialogue line (to be coded)
-Hi, I'm unity[p]
+[msg char="Toko"]
+This is a story about a friend of a friend, and her name is Xing.
 
-// Example of scene effects (to be coded)
-[effect type="earthquake"]
-[effect type="burning"]
+[reward name="XingDead" text="AchievementGet"]
 
-// Yes, No or alternative options for user input
-[option type="yes-no" text="Are you ok?" ref="are-you-ok1"]
+[char layer="1" source="Xing/Xing_Brown.png" effect="" left="50" bottom="0" flip="0"]
 
-// Multiple options
-[option type="multi" options="Ok | Not Sure | Why not?" text="Are you ok?" ref="are-you-ok1"]
+[msg char="Toko"]
+A few years ago, Xing's parents decided to go on a weekend getaway.
 
-// a response from a yes or no option
-[result ref="are-you-ok1" txtyes="Great to hear" txtno="Oh no, do you need a doctor?"]
+[char layer="2" source="Boyfriend/Boyfriend_normal.png" effect="" left="0" bottom="0" flip="0"]
 
-// Multiple options answered in the response tag delimited by '|'
-[result ref="are-you-ok1" response="Ok? | What do you mean? | Why?"]
+[msg char="Toko"]
+Xing invited her boyfriend over.
 
+[bg img="kitchen5"]
 
+It was a quiet afternoon. While they had an early dinner, they heard some giggling at the background.
 
+[msg char="unknown"]
+Giggling...
 
+[char layer="1" source="Xing_shock/Xing_shock_brown.png" effect="" left="50" bottom="0" flip="0"]
 
+[msg char="Xing"]
 
+Oh, did you hear someone giggling?
+
+[char layer="2" source="Boyfriend/Boyfriend_questioning.png" effect="" left="0" bottom="0" flip="0"]
+
+[msg char="Boyfriend"]
+
+Oh what do you mean? I didn't hear anything
+
+[char layer="2" source="Boyfriend/Boyfriend_hmmm.png" effect="" left="0" bottom="0" flip="0"]
+
+[msg char="Xing"]
+Oh I must have misheard
+
+[msg char="Boyfriend"]
+phew...
+
+[bg img="livingroom5"]
+[char layer="2" source="Boyfriend/Boyfriend_hmmm.png" effect="" left="0" bottom="0" flip="0"]
+[char layer="1" source="Xing/Xing_Brown.png" effect="" left="50" bottom="0" flip="0"]
+
+[msg char="Toko"]
+After dinner, they watched a movie
+
+[msg char="Unknown"]
+Shouting
+
+[char layer="1" source="Xing_shock/Xing_shock_brown.png" effect="" left="50" bottom="0" flip="0"]
+
+[msg char="Xing"]
+OMG I heard noises again, are you sure you haven't heard anything?
+
+[char layer="2" source="Boyfriend/Boyfriend_questioning.png" effect="" left="0" bottom="0" flip="0"]
+
+[msg char="Boyfriend"]
+I haven't. You are imagining it. You are ruining the movie!
+
+[msg char="Xing"]
+Sorry, it's just I am a bit nervous.
+
+[msg char="Boyfriend"]
+I am going to the bathroom.
+
+[char layer="2" source="Boyfriend/Boyfriend_nothing.png" effect="" left="0" bottom="0" flip="0"]
+
+[msg char="Xing"]
+Why are you taking so long?
+
+[char layer="1" source="Xing_shock/Xing_nothing.png" effect="" left="50" bottom="0" flip="0"]
+
+[bg img="black"]
+[msg char="Xing"]
+Stop!! Let me go!
+
+[bg img="livingroom5"]
+[char layer="1" source="Xing_tied/Xing_tied_brown.png" effect="" left="0" bottom="0" flip="0"]
+[char layer="2" source="Boyfriend/Boyfriend_sad.png" effect="" left="25" bottom="0" flip="0"]
+[char layer="3" source="Friends/Other_friend.png" effect="" left="50" bottom="0" flip="0"]
+[char layer="4" source="Friends/Angry_friend.png" effect="" left="75" bottom="0" flip="0"]
+
+[msg char="Xing"]
+Let me go! What are you doing?!
+
+[msg char="Boyfriend"]
+Sorry Xing, please forgive me. My friends really want to do this!!
+
+[msg char="Angry Friend"]
+Stop talking! Let's kill her!!
+
+[char layer="1" source="Xing_tied/Xing_nothing.png" effect="" left="0" bottom="0" flip="0"]
+[char layer="2" source="Boyfriend/Boyfriend_nothing.png" effect="" left="25" bottom="0" flip="0"]
+[char layer="3" source="Friends/Other_nothing.png" effect="" left="50" bottom="0" flip="0"]
+[char layer="4" source="Friends/Angry_nothing.png" effect="" left="75" bottom="0" flip="0"]
+
+[bg img="Black"]
+[msg char="Xing"]
+AHHHHHHHHHHHH
+
+[bg img="livingroom5"]
+[char layer="1" source="Toko/portrait_toko_01_orange.png" effect="" left="50" bottom="0" flip="0"]
+[msg char="Toko"]
+
+Xing got killed by her boyfriend and his friends. The scene was so brutal that even police needed counselling...
+
+[option result="arc5ending|arcselect" options="Believe/story/is/true|No/this/story/is/fake."]

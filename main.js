@@ -50,6 +50,3 @@ app.on('activate', () => {
 		createWindow()
 	}
 })
-
-
-
