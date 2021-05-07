@@ -8,12 +8,14 @@
         "start": "electron ."
     },
     "devDependencies": {
-        "electron": "^12.0.0",
+        "electron": "^12.0.5",
         "electron-packager": "^15.2.0"
     },
     "dependencies": {
         "bootstrap": "^4.6.0",
         "electron-debug": "^3.2.0",
-        "popper.js": "^1.16.1"
+        "jquery": "^3.6.0",
+        "popper.js": "^1.16.1",
+        "sqlite3": "^5.0.2"
     }
 }
