@@ -117,4 +117,6 @@ AHHHHHHHHHHHH
 
 Xing got killed by her boyfriend and his friends. The scene was so brutal that even police needed counselling...
 
-[option result="arc5ending|arcselect" options="Believe/story/is/true|No/this/story/is/fake."]
+[option result="arc5ending|arcselect" pick="Believe/story/is/true|No/this/story/is/fake."]
+
+[ENDSCENE]
