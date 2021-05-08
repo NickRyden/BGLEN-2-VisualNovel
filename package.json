@@ -1,32 +1,21 @@
 {
-  "name": "B-GLEN",
-  "version": "0.1.0",
-  "author": "Group: B-GLEN",
-  "description": "Visual Novel Engine",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "devDependencies": {
-    "@types/jquery": "^3.5.5",
-    "electron": "^12.0.5",
-    "electron-packager": "^15.2.0"
-  },
-  "dependencies": {
-    "bootstrap": "^4.6.0",
-    "electron-debug": "^3.2.0",
-    "jquery": "^3.6.0",
-    "popper.js": "^1.16.1",
-    "sqlite3": "^5.0.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/NRyden/B-GLEN2.git"
-  },
-  "keywords": [],
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/NRyden/B-GLEN2/issues"
-  },
-  "homepage": "https://github.com/NRyden/B-GLEN2#readme"
+    "name": "B-GLEN",
+    "version": "0.1.0",
+    "author": "Group: B-GLEN",
+    "description": "Visual Novel Engine",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "devDependencies": {
+        "electron": "^12.0.5",
+        "electron-packager": "^15.2.0"
+    },
+    "dependencies": {
+        "bootstrap": "^4.6.0",
+        "electron-debug": "^3.2.0",
+        "jquery": "^3.6.0",
+        "popper.js": "^1.16.1",
+        "sqlite3": "^5.0.2"
+    }
 }

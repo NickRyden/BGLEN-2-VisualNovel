@@ -1,0 +1,37 @@
+[scene source="arc2.html" arc="arc2"]
+
+[obj layer="layer5" source="clock.html"]
+
+[bg img="bedroom"]
+[sound param="cometh-the-visitor.mp3|loop"]
+
+You lie awake for a little while thinking about the story of Gwen. Something about it makes you wonder if it’s true.
+
+You feel uneasy about the details but your eyes start to grow heavy and you fall asleep.
+
+[bg img="black"]
+
+[bg img="black"]
+You slowly wake up feeling quite groggy for some reason.
+
+It’s very dark but it couldn’t possibly still be night. Your eyes take a while to adjust.
+
+
+[bg img="basement-light"]
+[char layer="4" name="shadow" source="shadow-man.png" effect="" left="80" bottom="15" scale="0.5"  flip="0"]
+A dark figure is lit by the light in the doorway. You can’t make out who it is.
+
+You call out to the figure and they seem to acknowledge you.
+
+You can feel their stare pierce you. Could this be the same person who took Gwen?
+
+[bg img="basement-dark"]
+[char layer="4" name="shadow" source="shadow-man.png" effect="" left="80" bottom="60" scale="0.5"  flip="0"]
+The figure walks out of the door and begins to close the door slowly.
+
+[sound param="giggle.mp3"]
+A high pitched giggle comes from the figure’s mouth. 
+
+You scream but the door is closed before you finish. You’ve become the figure’s latest victim.
+
+[option result="home|quit" options="Return/to/home.|quit"]
