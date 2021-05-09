@@ -1,40 +1,121 @@
 <!DOCTYPE html>
 
 <style>
-@keyframes wheelHueColor {
-    from, to { background: hsl(324, 70%, 45%); }
-    10%      { background: hsl(360, 65%, 45%); }
-    20%      { background: hsl( 36, 80%, 45%); }
-    30%      { background: hsl(288, 60%, 40%); }
-    40%      { background: hsl(324, 70%, 45%); }
-    50%      { background: hsl(360, 65%, 45%); }
-    60%      { background: hsl( 36, 80%, 45%); }
-    70%      { background: hsl(288, 60%, 40%); }
-    80%      { background: hsl(324, 70%, 45%); }
-    90%      { background: hsl(360, 65%, 45%); }
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Roboto bold', Arial;
+	user-select: none;
+	cursor: pointer;
 }
 
-#wall {
-    background: hsl(324, 70%, 45%);
-    animation: wheelHueColor 60s infinite;
+
+
+
+.opt-btn {
+	display: block;
+	border-radius: 25px;
+	min-width: 200px;
+	padding: 10px;
+	margin: 10px;
+	height: 6vh;
+	width: 30vw;
+	background: #aaa;
+	background: linear-gradient(to right, #777 0%, #aaa 30%, transparent 100%);
+	text-shadow: 0px 0px 10px #000;
+	opacity: 0.8;
+	color: #EEE;
+	line-height: 5.6vh;
+	font-size: 3.2vh;
 }
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 85%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #041daa;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
 </style>
 
-<div onclick="back2Menu();">Back to menu</div>
 
+<div id="menu-bg">
 <div>
 	<h1>Preferences</h1>
 	<h3>Display</h3>
-	<li>Windowed</li>
 
-	<li>Full Screen</li>
-	<h3>Transitions</h3>
-	<li>All</li>
-	<li>None</li>
+	<span class="opt-btn" onclick="exitFullscreen()">Windowed</span>
 
-	<h3>Test Speed</h3>
-	<li>20-80</li>
 
-	<h3>Volume</h3>
-	<li>0-100</li>
+
+
+<span class="opt-btn" onclick="openFullscreen()">Fullscreen</span>
+
+
+
+ <label for="vol">Volume Slider:</label><br>
+
+
+  <div class="slidecontainer">
+  <input type="range" min="0" max="100" value="50" class="slider" id="volRange">
 </div>
+
+<p>Volume: <span id="volShow"></span></p>
+
+
+<span class="opt-btn" onclick="back2Menu();">Return to Main Menu</span>
+
+</div>
+
+<script>
+function openFullscreen(){
+
+  document.documentElement.requestFullscreen();
+
+  };
+
+
+
+  function exitFullscreen(){
+
+    document.exitFullscreen();
+
+    };
+    var slider = document.getElementById("volRange");
+var output = document.getElementById("volShow");
+output.innerHTML = slider.value; // Display the default slider value
+
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+  </script>
