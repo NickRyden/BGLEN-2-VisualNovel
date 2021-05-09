@@ -1,5 +1,6 @@
-[scene source="arc.html" arc="3"] 
-[bg img="a3_room""]
+[scene source="arc.html" arc="3"]
+[bg img="black"]
+[char layer="1" source="Bella/Sinister.png" left="20" bottom="0" scale="1.0" flip="0"]
 
 
 
@@ -7,6 +8,9 @@
 [msg char="Doll"]
 No one remembers...
 No on will remember....
+[char layer="1" source="" left="20" bottom="0" scale="1.0" flip="0"]
 
 [bg img="a3_susan"]
 YOU!!!!
+
+[ENDSCENE]

@@ -1,36 +1,107 @@
-[scene name="testscene" arc="3"]
-[bg img="bgMtn01.png"]
+[scene source="arc.html" arc="3"]
 
-// Possible use of UI buttons if not set globally
-[ui_btn name="" action=""]
 
-// Place a character in the scene, optional effect, e.g. from left, from right teleport in etc.
-[char name="" img="UnityChan.png" effect="" left="170" bottom="0" layer="1" flip="0"]
+[bg img="a3_ouija"]
 
-// Example of what appears on which  layer. Set to false at the end of every instance if necessary
-[msg layer="message0" visible="true"]
 
-// Example of a dialogue line (to be coded)
-Hi, I'm unity[p]
+[char layer="1" source="Yuko/portrait_yuko_B_01.png" effect=" left="0" bottom="-10" scale="1.1" flip="0"]
 
-// Example of scene effects (to be coded)
-[effect type="earthquake"]
-[effect type="burning"]
 
-// Yes, No or alternative options for user input
-[option type="yes-no" text="Are you ok?" ref="are-you-ok1"]
+[msg char="Narrator"]
 
-// Multiple options
-[option type="multi" options="Ok | Not Sure | Why not?" text="Are you ok?" ref="are-you-ok1"]
+So this happened a couple years back at the old abadoned house on greenview road.
+I dunno how long exactly but a family used to live there, moved out here from the city. I heard they were running from something in the city.
+Not sure what but rumour was something or someone was after that family! Chased them out of the city.
+Was the parents and their daughter Susan anyway they left not long after but I heard from a friend of a friend of a friend that 3 kids broke in to the old house wanting to use a ouji board cause of a dare.
 
-// a response from a yes or no option
-[result ref="are-you-ok1" txtyes="Great to hear" txtno="Oh no, do you need a doctor?"]
+Anyway The kids got in and as they were setting up the board.
+One of them noticed something over in the corner. They found this old toy that no one saw on the way in. It had the name "Bella" printed on it.
+Then as one of them went to pick up the doll…..
 
-// Multiple options answered in the response tag delimited by '|'
-[result ref="are-you-ok1" response="Ok? | What do you mean? | Why?"]
+
+[bg img="a3_door"]
+[char layer="1" source="" effect=" bottom="0" flip="0"]
+
+[msg char="Narrator"]
+
+Knock Knock went the front door
 
 
 
 
+[bg img="a3_stairs"]
+
+[msg char="Teenager1"]
+
+That was the door, what's anyone doing here!?
 
 
+[msg char="Narrator"]
+
+
+
+
+Freaked out the teenagers walk down to the check the door but nothing was there.
+Finding nothing they returned to the room they were in to begin with.
+
+[bg img="a3_ouija"]
+
+[char layer="1" source="Teens/Emma1.png" left="50" bottom="0" scale="1.0" flip="0"]
+[char layer="2" source="Teens/Ben1.png" left="60" bottom="0" scale="1.0" flip="0"]
+[char layer="3" source="Teens/Ella1.png" left="70" bottom="0" scale="1.0" flip="0"]
+[char layer="4" source="Bella/Sad.png" left="-10" bottom="0" scale="1.0" flip="0"]
+
+As they entered the room they saw that the doll had  moved from one side of the room to the other.
+
+The doll now leaning over oouji board with it's arms pointing to “H” and “I”.
+
+[msg char="Teenager2"]
+How did that get there!!! That wasn’t there when we left the room
+
+[msg char="Teenager3"]
+Is this someone's idea of a joke because its NOT funny!
+
+[msg char="Teenager1"]
+Look if someone is there just show yourself, is someone else there?
+
+[msg char="Narrator"]
+As they said that the dolls arms moved again and pointed to yes.
+
+[msg char="Teenager2"]
+Wh…. Who are we talking to.
+
+
+[msg char="Narrator"]
+The lights flickered and  doll spelt out a name …. Susan!!
+
+[msg char="Teenager3"]
+What do you need from us
+
+[msg char="Doll"]
+No one cares, everyone forgot
+
+[msg char="Teenager2"]
+Forgot what?
+
+[msg char="Doll"]
+They took me, the others
+
+[msg char="Teenager1"]
+wh… what do you want, we don't know?
+
+[bg img="black"]
+
+[msg char="Narrator"]
+Now everyone felt a cold chill as what came next revealed everyone's fate that night.
+
+[char layer="1" source="" left="50" bottom="0" scale="1.0" flip="0"]
+[char layer="2" source="" left="60" bottom="0" scale="1.0" flip="0"]
+[char layer="3" source="" left="70" bottom="0" scale="1.0" flip="0"]
+[char layer="4" source="Bella/Sad.png" left="20" bottom="0" scale="1.0" flip="0"]
+
+The doll spell out “ tell me what I left here or else?” the rooms lights then went out!!
+
+
+
+[option result="arc3ending_good|arc3ending_bad" pick="Bella|Susan"]
+[ENDSCENE]

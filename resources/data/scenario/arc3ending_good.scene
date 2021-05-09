@@ -1,5 +1,9 @@
 [scene source="arc.html" arc="3"]
-[bg img="a3_room"]
+[bg img="a3_ouija"]
+
+[char layer="1" source="Teens/Emma1.png" left="50" bottom="0" scale="1.1" flip="0"]
+[char layer="2" source="Teens/Ella1.png" left="-20" bottom="0" scale="1.1" flip="0"]
+[char layer="3" source="Teens/Ben1.png" left="15" bottom="0" scale="1.1" flip="0"]
 
 
 
@@ -8,3 +12,5 @@
 
 The lights went back on with the doll no where to be seen.
 Everyone a little worse for wear but alive went home scared and not knowing what exactly went on.
+
+[ENDSCENE]
