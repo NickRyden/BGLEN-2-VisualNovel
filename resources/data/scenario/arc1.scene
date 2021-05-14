@@ -4,9 +4,9 @@
 
 [obj layer="layer5" source="clock.html"]
 
-[char layer="1" source=/Kohaku/portrait_kohaku_B_03.png left="-10" bottom="0" scale="0.1" flip="0"]
-[char layer="2" source=/Misaki/portrait_misaki_B_01.png left="50" bottom="0" scale="0.1" flip="0"]
-[char layer="3" source=/Toko/portrait_toko_01.png left="70" bottom="0" scale="0.1" flip="0"]
+[char layer="1" source=/Kohaku/portrait_kohaku_B_03.png left="-10" bottom="0" scale="0.75" flip="0"]
+[char layer="2" source=/Misaki/portrait_misaki_B_01.png left="50" bottom="0" scale="0.75" flip="0"]
+[char layer="3" source=/Toko/portrait_toko_01.png left="70" bottom="0" scale="0.75" flip="0"]
 
 [msg char="Narrator"]
 This is a story that starts off much like this night, my parents had gone away for the weekend. 
