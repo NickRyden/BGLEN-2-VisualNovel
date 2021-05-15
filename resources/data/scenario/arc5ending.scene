@@ -1,24 +1,25 @@
 [scene source="arc.html" arc="5"]
-[bg img="livingroom5"]
+[bg img="livingroom5" scale="0.5"]
 
 [sound param="Kaiseki.mp3|loop"]
 
-[char layer="1" source="Toko/portrait_toko_01_orange.png" effect="" left="50" bottom="0" flip="0"]
+[char layer="1" source="Toko/portrait_toko_01_orange.png" effect="" left="50" bottom="0" scale="1.0" flip="0"]
 
 [msg char="Toko"]
 You shouldn't believe me
 
-[char layer="1" source="Toko/nothing.png" effect="" left="50" bottom="0" flip="0"]
+[char layer="1" source="Toko/nothing.png" effect="" left="50" bottom="0" scale="1.0" flip="0"]
 [bg img="black"]
 
+[sound param="GirlsScreaming.wav"]
 [msg char=""]
 Girls Screaming
 
 [bg img="livingroom5"]
-[char layer="1" source="Toko/portrait_toko_01_orange.png" effect="" left="0" bottom="0" flip="0"]
-[char layer="2" source="Boyfriend/Boyfriend_sad.png" effect="" left="25" bottom="0" flip="0"]
-[char layer="3" source="Friends/Other_friend.png" effect="" left="50" bottom="0" flip="0"]
-[char layer="4" source="Friends/Angry_friend.png" effect="" left="75" bottom="0" flip="0"]
+[char layer="1" source="Toko/portrait_toko_01_orange.png" effect="" visible="true" opacity="127" left="0" top="10" scale="1.0" flip="0"]
+[char layer="2" source="Boyfriend/Boyfriend_sad.png" effect="" visible="true" opacity="127" left="25" top="20" scale="0.5" flip="0"]
+[char layer="3" source="Friends/Other_friend.png" effect="" visible="true" opacity="127" left="50" top="20" scale="0.5" flip="0"]
+[char layer="4" source="Friends/Angry_friend.png" effect="" visible="true" opacity="127" left="75" top="20" scale="0.5" flip="0"]
 
 
 [msg char="Angry friend"]
@@ -30,6 +31,7 @@ You know too much!! Boys, kill them all!!!
 [char layer="4" source="Friends/Angry_nothing.png" effect="" left="75" bottom="0" flip="0"]
 
 [bg img="black"]
+[sound param="PoliceSiren.wav"]
 [msg char=""]
 Police Siren
 

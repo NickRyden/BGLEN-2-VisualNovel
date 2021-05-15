@@ -1,48 +1,50 @@
 [scene source="arc.html" arc="5"]
-[bg img="livingroom5"]
+[bg img="livingroom5" scale="0.25"]
 [checkpoint]
 
 [sound param="Kaiseki.mp3|loop"]
 
 [obj layer="layer5" source="clock.html"]
 
-[char layer="1" source="Toko/portrait_toko_01_orange.png" effect="" left="50" bottom="0" flip="0"]
+[char layer="1" source="Toko/portrait_toko_01_orange.png" effect="" left="50" bottom="0" scale="1.0" flip="0"]
 
 [msg char="Toko"]
 This is a story about a friend of a friend, and her name is Xing.
 
 [reward name="XingDead" text="AchievementGet"]
 
-[char layer="1" source="Xing/Xing_Brown.png" effect="" left="50" bottom="0" flip="0"]
+[char layer="1" source="Xing/Xing_Brown.png" effect="" visible="true" opacity="127" left="50" top="10" scale="0.5" flip="0"]
 
 [msg char="Toko"]
 A few years ago, Xing's parents decided to go on a weekend getaway.
 
-[char layer="2" source="Boyfriend/Boyfriend_normal.png" effect="" left="0" bottom="0" flip="0"]
+[char layer="2" source="Boyfriend/Boyfriend_normal.png" effect="" visible="true" opacity="127" left="0" top="10" scale="0.5" flip="0"]
 
 [msg char="Toko"]
 Xing invited her boyfriend over.
 
-[bg img="kitchen5"]
+[bg img="kitchen5" scale="0.5"]
 
 It was a quiet afternoon. While they had an early dinner, they heard some giggling at the background.
+
+[sound param="MaleGiggles.ogg"]
 
 [msg char="unknown"]
 Giggling...
 
-[char layer="1" source="Xing_shock/Xing_shock_brown.png" effect="" left="50" bottom="0" flip="0"]
+[char layer="1" source="Xing_shock/Xing_shock_brown.png" effect="" visible="true" opacity="127" left="50" top="10" scale="0.5" flip="0"]
 
 [msg char="Xing"]
 
 Oh, did you hear someone giggling?
 
-[char layer="2" source="Boyfriend/Boyfriend_questioning.png" effect="" left="0" bottom="0" flip="0"]
+[char layer="2" source="Boyfriend/Boyfriend_questioning.png" effect="" visible="true" opacity="127" left="0" top="10" scale="0.5" flip="0"]
 
 [msg char="Boyfriend"]
 
 Oh what do you mean? I didn't hear anything
 
-[char layer="2" source="Boyfriend/Boyfriend_hmmm.png" effect="" left="0" bottom="0" flip="0"]
+[char layer="2" source="Boyfriend/Boyfriend_hmmm.png" effect="" visible="true" opacity="127" left="0" top="10" scale="0.5" flip="0"]
 
 [msg char="Xing"]
 Oh I must have misheard
@@ -50,22 +52,23 @@ Oh I must have misheard
 [msg char="Boyfriend"]
 phew...
 
-[bg img="livingroom5"]
-[char layer="2" source="Boyfriend/Boyfriend_hmmm.png" effect="" left="0" bottom="0" flip="0"]
-[char layer="1" source="Xing/Xing_Brown.png" effect="" left="50" bottom="0" flip="0"]
+[bg img="livingroom5" scale="0.5"]
+[char layer="2" source="Boyfriend/Boyfriend_hmmm.png" effect="" visible="true" opacity="127" left="0" top="10" scale="0.5" flip="0"]
+[char layer="1" source="Xing/Xing_Brown.png" effect="" visible="true" opacity="127" left="50" top="10" scale="0.5" flip="0""]
 
 [msg char="Toko"]
 After dinner, they watched a movie
 
+[sound param="MaleScreaming.mp3"]
 [msg char="Unknown"]
 Shouting
 
-[char layer="1" source="Xing_shock/Xing_shock_brown.png" effect="" left="50" bottom="0" flip="0"]
+[char layer="1" source="Xing_shock/Xing_shock_brown.png" effect="" visible="true" opacity="127" left="50" top="10" scale="0.5" flip="0"]
 
 [msg char="Xing"]
 OMG I heard noises again, are you sure you haven't heard anything?
 
-[char layer="2" source="Boyfriend/Boyfriend_questioning.png" effect="" left="0" bottom="0" flip="0"]
+[char layer="2" source="Boyfriend/Boyfriend_questioning.png" effect="" visible="true" opacity="127" left="0" top="10" scale="0.5" flip="0"]
 
 [msg char="Boyfriend"]
 I haven't. You are imagining it. You are ruining the movie!
@@ -88,10 +91,10 @@ Why are you taking so long?
 Stop!! Let me go!
 
 [bg img="livingroom5"]
-[char layer="1" source="Xing_tied/Xing_tied_brown.png" effect="" left="0" bottom="0" flip="0"]
-[char layer="2" source="Boyfriend/Boyfriend_sad.png" effect="" left="25" bottom="0" flip="0"]
-[char layer="3" source="Friends/Other_friend.png" effect="" left="50" bottom="0" flip="0"]
-[char layer="4" source="Friends/Angry_friend.png" effect="" left="75" bottom="0" flip="0"]
+[char layer="1" source="Xing_tied/Xing_tied_brown.png" effect="" visible="true" opacity="127" left="0" top="10" scale="0.5" flip="0"]
+[char layer="2" source="Boyfriend/Boyfriend_sad.png" effect="" visible="true" opacity="127" left="25" top="10" scale="0.5" flip="0"]
+[char layer="3" source="Friends/Other_friend.png" effect="" visible="true" opacity="127" left="50" top="10" scale="0.5" flip="0"]
+[char layer="4" source="Friends/Angry_friend.png" effect="" visible="true" opacity="127" left="75" top="10" scale="0.5" flip="0"]
 
 [msg char="Xing"]
 Let me go! What are you doing?!
@@ -108,11 +111,12 @@ Stop talking! Let's kill her!!
 [char layer="4" source="Friends/Angry_nothing.png" effect="" left="75" bottom="0" flip="0"]
 
 [bg img="Black"]
+[sound param="OneGirlScreaming.wav"]
 [msg char="Xing"]
 AHHHHHHHHHHHH
 
-[bg img="livingroom5"]
-[char layer="1" source="Toko/portrait_toko_01_orange.png" effect="" left="50" bottom="0" flip="0"]
+[bg img="livingroom5" scale="0.25"]
+[char layer="1" source="Toko/portrait_toko_01_orange.png" effect="" left="50" bottom="0" scale="1.0" flip="0"]
 [msg char="Toko"]
 
 Xing got killed by her boyfriend and his friends. The scene was so brutal that even police needed counselling...
