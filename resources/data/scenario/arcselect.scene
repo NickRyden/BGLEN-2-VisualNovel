@@ -1,5 +1,7 @@
 [scene source="char-select.html" arc="arcselect"]
 [bg img="city"]
+
+[LOAD loadData="confirm"]
  
 [charsel charlayer="1" source="Kohaku/portrait_kohaku_B_03_black.png" effect="" left="-10" bottom="0" flip="0"]
 [charsel charlayer="2" source="Misaki/portrait_misaki_B_01_brown.png" effect="" left="10" bottom="0" flip="0"]

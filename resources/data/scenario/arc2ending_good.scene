@@ -34,4 +34,6 @@ A high pitched giggle comes from the figure’s mouth.
 
 You scream but the door is closed before you finish. You’ve become the figure’s latest victim.
 
+[SAVE arc="arc2"]
+
 [option result="home|quit" options="Return/to/home.|quit"]

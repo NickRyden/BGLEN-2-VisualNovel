@@ -1,5 +1,6 @@
 [scene source="arc.html" arc="1"] 
 [bg img="arc1room"]
+
 [checkpoint]
 
 [obj layer="layer5" source="clock.html"]
@@ -73,4 +74,5 @@ My friends had been brutally murdered by the attacker while I was outside.
 
 The police never found the attacker, they are still out there targeting girls at slumber parties.
 
+[SAVE arc="arc1"]
 [ENDSCENE]

@@ -37,4 +37,6 @@ Police Siren
 
 You are dead. The end.
 
+[SAVE arc="arc5"]
+
 [option result="home|quit" options="Return/to/home.|quit"]

@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 
+
 'use strict';
 
 var maindir   = 'resources/';
@@ -28,6 +29,7 @@ function createWindow () {
 		//frame: false,
 		webPreferences: {
 			nodeIntegration: true,
+			contextIsolation: false,
 			devTools: true
 		}
 	})

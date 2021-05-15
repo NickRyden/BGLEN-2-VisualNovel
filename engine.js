@@ -1,3 +1,5 @@
+const sqlite3 = require('sqlite3')
+
 // layout the directory for content
 var maindir   = '../B-GLEN/resources/';
 var LocnScene = '../B-GLEN/resources/data/scenario/';
@@ -197,11 +199,14 @@ function ManageLines(Scene, LineNum) {
 
 // Start a new game
 function newGame() {
+	createSaveTable()
 	ProcessScene('arcselect');
 }
 
 // Continue game function - TO BE IMPLEMENTED
-function contGame() {}
+function contGame() {
+	ProcessScene('arcselect');
+}
 
 // Preferences UI - TO BE IMPLEMENTED
 function openPrefs() {
@@ -240,6 +245,122 @@ function doRageQuit() {
 	setTimeout(function(){
 		window.close();
 	}, 5000);
+}
+
+// Sets up database, table, and entry for saving status of arcs
+function createSaveTable(){
+	let db = new sqlite3.Database('./saveData.db', err => {
+        if(err){
+            return console.error(err.message)
+        }
+        console.log(('Connected to Database'))
+    })
+
+	db.serialize(() => {
+		db.run(`CREATE TABLE IF NOT EXISTS save(
+		arc1 BOOLEAN DEFAULT FALSE,
+		arc2 BOOLEAN,
+		arc3 BOOLEAN,
+		arc4 BOOLEAN,
+		arc5 BOOLEAN)`)
+
+	// Ensures only one entry for saves
+	.run(`DELETE FROM save`)
+
+	.run(`INSERT INTO save(arc1, arc2, arc3, arc4, arc5) VALUES(
+		FALSE, FALSE, FALSE, FALSE, FALSE
+	)`)
+	})
+
+	db.close(err => {
+        if(err) {
+            return console.error(err.message)
+        }
+        console.log('Closed connection to Database')
+    })
+}
+
+// Saves arc status to indicate if arc has been completed
+function saveFunction(arcNumber){
+	let db = new sqlite3.Database('./saveData.db', err => {
+        if(err){
+            return console.error(err.message)
+        }
+        console.log(('Connected to Database'))
+    })
+
+	db.run(`UPDATE save
+	SET ${arcNumber} = TRUE
+	WHERE rowid = 1`)
+
+	db.close(err => {
+        if(err) {
+            return console.error(err.message)
+        }
+        console.log('Closed connection to Database')
+    })
+}
+
+// Loads existing data
+function loadSaveData(){
+	let arc1 = 0;
+	let arc2 = 0;
+	let arc3 = 0;
+	let arc4 = 0;
+	let arc5 = 0;
+
+	let db = new sqlite3.Database('./saveData.db', err => {
+        if(err){
+            return console.error(err.message)
+        }
+        console.log(('Connected to Database'))
+    })
+
+	db.serialize(() => {
+		db.get(`SELECT * FROM save`, (err, row) => {
+			if (err){
+				return console.error(err.message)
+			}
+			arc1 = row.arc1
+			console.log('arc1 = ', arc1)
+			arc2 = row.arc2
+			console.log('arc2 = ', arc2)
+			arc3 = row.arc3
+			console.log('arc3 = ', arc3)
+			arc4 = row.arc4
+			console.log('arc4 = ', arc4)
+			arc5 = row.arc5
+			console.log('arc5 = ', arc5)
+
+			showHideCharacters(arc1, arc2, arc3, arc4, arc5)
+		})
+		.close(err => {
+			if(err) {
+				return console.error(err.message)
+			}
+			console.log('Closed connection to Database')
+		})
+	})
+
+}
+
+function showHideCharacters(arc1, arc2, arc3, arc4, arc5){
+	if(arc1 === 1){
+		document.querySelector('#charpic1').style.display = 'none'
+	}
+	if(arc2 === 1){
+		document.querySelector('#charpic2').style.display = 'none'
+	}
+	if(arc3 === 1){
+		document.querySelector('#charpic3').style.display = 'none'
+	}
+	if(arc4 === 1){
+		document.querySelector('#charpic4').style.display = 'none'
+	}
+	if(arc5 === 1){
+		document.querySelector('#charpic5').style.display = 'none'
+	}
+
 }
 
 // Process the title and menu screens
@@ -361,6 +482,16 @@ function ManageScene(Res) {
 					charselect = 0;
 					$("#wall").empty();
 					break;
+				case 'SAVE':
+					console.log(item[0]);
+					console.log(item[1]);
+					let arcNumber = item[1].replaceAll('"', '')
+					saveFunction(arcNumber)
+					break;
+				case 'LOAD':
+					console.log(item[0]);
+					console.log(item[1]);
+					loadSaveData()
 				case 'hidden':
 					if (item[0] == 'source') {
 						var randString = Math.random().toString(36).substring(7);
