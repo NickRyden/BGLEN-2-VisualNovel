@@ -1,0 +1,32 @@
+[scene source="arc.html" arc="1"] 
+[bg img="arc1room"]
+
+[obj layer="layer5" source="clock.html"]
+
+[msg char="Narrator"]
+And with that settled Kohaku left to go find the source of the screams.
+
+
+[bg img="arc1park"]
+[char layer="1" source=/Kohaku/portrait_kohaku_B_03.png left="30" bottom="0" scale="1.0" flip="0"]
+
+[msg char="Narrator"]
+Kohaku went out to check the park next to her house and found her neighbour bleeding and half concious.
+
+Petrified that she could be next, she imediately called the police and stayed with her neighbour in the hope that the attacker didnt come back.
+
+Once the police and ambulance arrived, Kohaku decided to go back to the house and check on the girls.
+
+[bg img="arc1room"]
+[char layer="1" source=/Kohaku/portrait_kohaku_B_03.png left="50" bottom="0" scale="1.0" flip="0"]
+
+[msg char="Narrator"]
+What Kohaku found left her scared for life.
+
+Her friends had been brutally murdered by the attacker while she was outside.
+
+The police never found the attacker, they are still out there targeting girls at slumber parties.
+
+[SAVE arc="arc1"]
+
+[ENDSCENE]

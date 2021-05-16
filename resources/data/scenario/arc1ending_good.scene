@@ -1,0 +1,40 @@
+[scene source="arc.html" arc="1"] 
+[bg img="arc1room"]
+
+[obj layer="layer5" source="clock.html"]
+
+[char layer="1" source=/Kohaku/portrait_kohaku_B_03.png left="30" bottom="0" scale="0.5" flip="1"]
+[char layer="2" source=/Misaki/portrait_misaki_B_01.png left="50" bottom="0" scale="0.5" flip="0"]
+[char layer="3" source=/Toko/portrait_toko_01.png left="70" bottom="0" scale="0.5" flip="0"]
+
+[msg char="Narrator"]
+We decided that it would be safest if we all stayed together, inside and let the police investigate.
+
+The girls looked out the window eagerly awaiting the police's arrival.
+
+Unaware that the danger was already inside the house.
+
+[char layer="4" source=arc1intruder.png left="-20" bottom="0" scale="0.35" flip="1"]
+
+[char layer="1" source=/Kohaku/portrait_kohaku_B_03.png left="30" bottom="0" scale="0.5" flip="1"]
+
+Kohaku saw a man's reflection in the window they were looking out and turned around horrified
+
+[char layer="1" source=/Kohaku/portrait_kohaku_B_03.png left="-10" bottom="0" scale="0.5" flip="1"]
+
+She rushed to fend him off and screamed for the others to run.
+
+[bg img="town"]
+
+[char layer="1" source=null]
+[char layer="2" source=/Misaki/portrait_misaki_B_01.png left="10" bottom="0" scale="0.5" flip="1"]
+[char layer="3" source=/Toko/portrait_toko_01.png left="50" bottom="0" scale="0.5" flip="1"]
+[char layer="4" source=null]
+
+Kohaku's friends made it out that night, however Kohaku was found dead later that night.
+
+The police never found the attacker, they are still out there targeting girls at slumber parties.
+
+[SAVE arc="arc1"]
+
+[ENDSCENE]
