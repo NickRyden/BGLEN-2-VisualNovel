@@ -1,6 +1,5 @@
 [scene source="arc.html" arc="1"] 
 [bg img="arc1room"]
-
 [checkpoint]
 
 [obj layer="layer5" source="clock.html"]
@@ -10,17 +9,17 @@
 [char layer="3" source=/Toko/portrait_toko_01.png left="70" bottom="0" scale="0.75" flip="0"]
 
 [msg char="Narrator"]
-This is a story that starts off much like this night, my parents had gone away for the weekend. 
+This is a story that starts off much like this night, Kohaku's parents had gone away for the weekend. 
 
-I decided to have some friends around for a slumber party.
+She decided to have some friends around for a slumber party.
 
-I thought it would be a really fun idea to start telling ghost stories to each other.
+Kohaku thought it would be a really fun idea to start telling ghost stories to each other.
 
 As the night got later and later the stories became more and more scary.
 
-As we started getting tired and ran out of stories to tell, we decided it was about time to go to bed when we heard a loud scream from outside.
+As we started getting tired and ran out of stories to tell, they decided it was about time to go to bed when they heard a loud scream from outside.
 
-About a minute of silence passed after the scream, I wasnt quite sure what to make of it when suddenly my phone rang.
+About a minute of silence passed after the scream, Kohaku wasnt quite sure what to make of it when suddenly her phone rang.
 
 [msg char="Toko"]
 Dont answer that!
@@ -29,9 +28,9 @@ Dont answer that!
 I'm scared, lets call the police.
 
 [msg char="Narrator"]
-I answered the phone and all I could heard was the gurgled sounds of someone drowning in their own blood.
+Kohaku answered the phone and all she could heard was the gurgled sounds of someone drowning in their own blood.
 
-The other girls had heard what I had heard, and thus begun a very serios conversation.
+The other girls had heard what she had heard, and thus begun a very serios conversation.
 
 [msg char="Kohaku"]
 I think we should go out and check out that scream.
@@ -48,31 +47,6 @@ What if there is someone out there in need of help! We need to go.
 [msg char="Misako"]
 You can go out there yourself, Toko and I are staying here.
 
-[msg char="Narrator"]
-And with that settled I left to go find the source of the screams.
+[option result="arc1ending_bad|arc1ending_good" pick="Go/out/and/investigate/the/screams|Stay/inside/and/call/the/police"]
 
-
-[bg img="arc1park"]
-[char layer="1" source=/Kohaku/portrait_kohaku_B_03.png left="30" bottom="0" scale="1.0" flip="0"]
-[char layer="2" source=""]
-[char layer="3" source=""]
-
-[msg char="Narrator"]
-I went out to check the park next to my house and found my neighbour bleeding and half concious.
-
-Petrified that I could be next, I imediately called the police and stayed with my neighbour in the hope that the attacker didnt come back.
-
-Once the police and ambulance arrived, I decided to go back to the house and check on the girls.
-
-[bg img="arc1room"]
-[char layer="1" source=/Kohaku/portrait_kohaku_B_03.png left="50" bottom="0" scale="1.0" flip="0"]
-
-[msg char="Narrator"]
-What I found left me scared for life.
-
-My friends had been brutally murdered by the attacker while I was outside.
-
-The police never found the attacker, they are still out there targeting girls at slumber parties.
-
-[SAVE arc="arc1"]
 [ENDSCENE]
