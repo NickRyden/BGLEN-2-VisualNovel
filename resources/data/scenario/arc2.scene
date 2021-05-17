@@ -6,7 +6,7 @@
 [sound param="cometh-the-visitor.mp3|loop"]
 
 [char name="Gwen" source="Gwen/gwen-happy-brown.png" effect="" left="65" bottom="-30" scale="0.8" layer="2" flip="0"]
-[msg char="PartyChick"]
+[msg char="Narrator"]
 
 Gwen was at home alone on a Friday night. Her parents had gone out to dinner with some friends.
 
@@ -55,10 +55,11 @@ As she ran toward the back door instead, she noticed a dark shadowy figure stood
 Suddenly the figure charged toward Gwen emitting a high pitched giggle and knocking her unconscious.
 
 [bg img="black"]
-
-[bg img="living-room-popcorn"]
 [char layer="2" name="Gwen" source="Gwen/gwen-scared-brown.png" effect="" left="78" bottom="-50" scale="0" flip="0"]
 [char layer="4" name="shadow" source="shadow-man.png" effect="" left="0" bottom="-22" scale="0"  flip="0"]
+It was lights out for Gwen...
+
+[bg img="living-room-popcorn"]
 When Gwen’s parents returned from dinner they couldn’t open the front door because of the dead bolt.
 
 They knocked expecting Gwen to open the door as all the lights were on but she didn’t answer.
@@ -69,6 +70,6 @@ There was popcorn all over the floor and the TV was on but Gwen was no where in 
 
 She was gone...
 
-[option result="arc2ending_good" pick="Pick the ending."]
+[option result="arc2ending_good" pick="Return/to/slumber/party."]
 
 [ENDSCENE]
