@@ -41,4 +41,4 @@ This is...the end...
 
 [SAVE arc="arc2"]
 
-[option result="home|quit" options="Return/to/home.|quit"]
+[option result="arcselect" pick="Return/to/selection"]

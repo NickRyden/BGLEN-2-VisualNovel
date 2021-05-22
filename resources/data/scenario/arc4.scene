@@ -7,7 +7,6 @@
 [obj layer="layer5" source="clock.html"]
 
 [char layer="1" source="Marie/portrait_marie_01.png" left="50" bottom="0" scale="1.0" flip="0"]
-[char layer="2" source="Marie/portrait_marie_01.png" left="10" bottom="0" scale="0.5" flip="0"]
 
 [msg char="Haruka"]
 This story started when I was at home with my parents, Akio and Chiyo, a couple of years ago.
@@ -17,8 +16,6 @@ This story started when I was at home with my parents, Akio and Chiyo, a couple 
 My mum was reading a book before making lunch for everyone.
 
 My father was gardening around the back before he started his project work in the basement.
-
-[hidden source="phantom.jpg" left="10" top="10" flip="0"]
 
 I had to study, a big assignment was coming up, and it needed to go well. My assignment results were atrocious.
 

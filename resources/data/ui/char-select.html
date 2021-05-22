@@ -222,30 +222,50 @@ charselect = 1;
 var Arc = 'arcselect';
 charselect = 0;
 
-
 function changeHair(char, color) {
     switch (char) {
         case 'char1':
             CharDiv = $('#charpic1');
             CharImg = LocnImgChar + 'Kohaku/portrait_kohaku_B_03';
+            HairNum = 'arc1';
             break;
         case 'char2':
             CharDiv = $('#charpic2');
             CharImg = LocnImgChar + 'Misaki/portrait_misaki_B_01';
+            HairNum = 'arc2';
             break;
         case 'char3':
             CharDiv = $('#charpic3');
             CharImg = LocnImgChar + 'Yuko/portrait_yuko_B_01';
+            HairNum = 'arc3';
             break;
         case 'char4':
             CharDiv = $('#charpic4');
             CharImg = LocnImgChar + 'Marie/portrait_marie_01';
+            HairNum = 'arc4';
             break;
         case 'char5':
             CharDiv = $('#charpic5');
             CharImg = LocnImgChar + 'Toko/portrait_toko_01';
+            HairNum = 'arc5';
             break;
     }
+
+	let db = new sqlite3.Database('./saveData.db', err => {
+        if(err){
+            return console.error(err.message)
+        }
+        console.log(('Connected to Database'))
+    })
+
+	db.run(`UPDATE hair	SET ${HairNum} = ${color} WHERE rowid = 1`)
+
+	db.close(err => {
+        if(err) {
+            return console.error(err.message)
+        }
+        console.log('Closed connection to Database')
+    })
 
     CharDiv.css('background-image', 'url(' + CharImg + '_' + color + '.png)');
     CharDiv.css('background-size', 'cover');

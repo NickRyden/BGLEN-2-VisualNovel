@@ -408,6 +408,9 @@ function ManageScene(Res) {
 						$('#layer' + val).append('<div class="char-item" id="char' + val + '">');
 						currLayer = val;
 					} else if (item[0] == 'source') {
+						// split item[1] using '.' as delimeter, underscore and hair colour return from databse then display in scene
+
+
 						$('#char' + currLayer).css('background-image', 'url(' + LocnImgChar + item[1].replaceAll('"', '') + ')');
 						$('#char' + currLayer).css('background-size', 'cover');
 					} else if (item[0] == 'left') {

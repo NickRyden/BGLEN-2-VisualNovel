@@ -30,13 +30,13 @@ function createWindow () {
 		webPreferences: {
 			nodeIntegration: true,
 			contextIsolation: false,
-			devTools: true
+			//devTools: true
 		}
 	})
 	
 	win.removeMenu()
 	win.loadFile('index.html')
-	win.webContents.openDevTools()
+	//win.webContents.openDevTools()
 }
 
 app.whenReady().then(createWindow)
