@@ -3,7 +3,7 @@ const { app, BrowserWindow } = require('electron')
 
 'use strict';
 
-var maindir   = 'resources/';
+var maindir   = __dirname + '/resources/';
 
 const fs = require('fs');
 const EventEmitter = require('events')

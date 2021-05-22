@@ -1,16 +1,17 @@
 const sqlite3 = require('sqlite3')
+const dbPath = __dirname + '/saveData.db'
 
 // layout the directory for content
-var maindir   = '../B-GLEN/resources/';
-var LocnScene = '../B-GLEN/resources/data/scenario/';
-var LocnImg   = '../B-GLEN/resources/data/images/';
-var LocnImgBg   = '../B-GLEN/resources/data/images/bg/';
-var LocnImgChar   = '../B-GLEN/resources/data/images/character/';
+var maindir   = './resources/';
+var LocnScene = './resources/data/scenario/';
+var LocnImg   = './resources/data/images/';
+var LocnImgBg   = './resources/data/images/bg/';
+var LocnImgChar   = './resources/data/images/character/';
 
-var LocnFonts = '../B-GLEN/resources/data/fonts/';
-var LocnSound = '../B-GLEN/resources/data/sound/';
-var LocnUI    = '../B-GLEN/resources/data/ui/'; 
-var LocnVideo = '../B-GLEN/resources/data/video/';
+var LocnFonts = './resources/data/fonts/';
+var LocnSound = './resources/data/sound/';
+var LocnUI    = './resources/data/ui/'; 
+var LocnVideo = './resources/data/video/';
 
 var CurrentLine = 0;
 var CurrArc = '';
@@ -249,7 +250,7 @@ function doRageQuit() {
 
 // Sets up database, table, and entry for saving status of arcs
 function createSaveTable(){
-	let db = new sqlite3.Database('./saveData.db', err => {
+	let db = new sqlite3.Database(dbPath, err => {
         if(err){
             return console.error(err.message)
         }
@@ -282,7 +283,7 @@ function createSaveTable(){
 
 // Saves arc status to indicate if arc has been completed
 function saveFunction(arcNumber){
-	let db = new sqlite3.Database('./saveData.db', err => {
+	let db = new sqlite3.Database(dbPath, err => {
         if(err){
             return console.error(err.message)
         }
@@ -309,7 +310,7 @@ function loadSaveData(){
 	let arc4 = 0;
 	let arc5 = 0;
 
-	let db = new sqlite3.Database('./saveData.db', err => {
+	let db = new sqlite3.Database(dbPath, err => {
         if(err){
             return console.error(err.message)
         }

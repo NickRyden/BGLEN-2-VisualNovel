@@ -5,7 +5,8 @@
   "description": "Visual Novel Engine",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dev": "electron-packager ./ --platform=mas --arch=x64"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.5",
