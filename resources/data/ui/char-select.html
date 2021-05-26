@@ -251,22 +251,6 @@ function changeHair(char, color) {
             break;
     }
 
-	let db = new sqlite3.Database('./saveData.db', err => {
-        if(err){
-            return console.error(err.message)
-        }
-        console.log(('Connected to Database'))
-    })
-
-	db.run(`UPDATE hair	SET ${HairNum} = ${color} WHERE rowid = 1`)
-
-	db.close(err => {
-        if(err) {
-            return console.error(err.message)
-        }
-        console.log('Closed connection to Database')
-    })
-
     CharDiv.css('background-image', 'url(' + CharImg + '_' + color + '.png)');
     CharDiv.css('background-size', 'cover');
 }
